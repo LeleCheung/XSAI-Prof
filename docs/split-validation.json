@@ -1,0 +1,139 @@
+{
+  "schema": "xsai-prof.repository-split-acceptance/v1",
+  "status": "passed",
+  "version": "0.8.1b1",
+  "source_commit": "9947da1a4a4d6316d8f6b1798c321697d3e3c8ae",
+  "kda_source_preservation_commit": "d6f3e15f30a7a36293494b6c21742e2a7bb4e7e0",
+  "original_files_preserved": 160,
+  "original_artifacts_unchanged": 94,
+  "wheel_sha256": "cdce0787590d0b39b3febb2fba454ae386ec040dd97cd638906cdd48600e9d46",
+  "sdist_sha256": "2c78da345c47fbf9fd63b2ca4279b05df8fa9cee8c8845cba25a4c85f064b752",
+  "unchanged_core_members": {
+    "kda_summary.py": "957b3d883d9ae7a42c05b087b566f2faadcbff76af7386a495e02b05b3a4a999",
+    "kda_roi.py": "bba6e1a0cc3638a9a3ee150339baf5fdb2784bbe8ac0a49b939c7cd96e8131c7",
+    "kda_hardware_contract.py": "2081dbb86e5092f8e4eb7891543097ee63a2313b71b5826a3353cf968f6ac581",
+    "kda_collect.py": "e04d60f5a5b2e9613e8df97c751f43e6f6b3aae6a3dbcd91a1b1c53f7eea56d8",
+    "kda_hardware.py": "dcde40c09cf916f2d8ed1dedb0a81eecfb6086e663b439a29417f82f1667816f",
+    "kda_paths.py": "901b223d8560a2e37cae718c2beb30706596e88f9973de034515a6b3127c3241",
+    "cli.py": "e4c5600c1c53196ea8bfea13f30a037b3e0c9ab85c0c379c17a51806695c016f",
+    "kda_capture.py": "2b63a21731a3753896693b52ca2b20dc31e2b73a23f09a25ff3891d4e3b46a83",
+    "kda_analyze.py": "1307e20d2c73d115ed9c9c515e33d1c2754bb298755e812f7b2297187478455f",
+    "kda_diagnose.py": "20a4ed629aea33caee038f8216b26cb367565db7457cb59c89991daace4ac20f",
+    "kda_cpu_memory.py": "bd26aaf7cf1b3f990314ebfb1d3a1b88ca1f0c787f10c0cf34fd176e2af3aa18",
+    "kda_plan.py": "14eeb2112c2143c48a774f26ef72da38bdc4d57df3130d9ad2067a20e1bd24e0",
+    "kda_reference_model.py": "8d7b4760538a0ee5f32ba4e1bd7f5c23d03334761e0bb5f4386042ee559377c4",
+    "kda_portable.py": "ae7bce4cfdf4908db1e1c3a09ef47f5d4f0925f7b702c68f46c3bd23976caedf",
+    "kda_timeline.py": "aee625ff4ed2cc6888e95c64d7d32588f164fb7899d387515cbb315ddf264b86",
+    "kda_output.py": "43424f20ff0ebcfbb5a2e945465ec72d54d0d78a6731261166d0bf61b3daac7b",
+    "kda_observer.py": "f7724e0df8f248805b7ec159cbea125acfdbf5acdfbc0f233e22289b41dab511",
+    "xsai_kda.py": "97e78e357935daa78e0402999acbf5fcee5b68b3c544a1b381dd32797d9821d3",
+    "kda_demo.py": "641c7fa38162845813041c1f069f233d8e53993a547019f9718e7a120f30410e",
+    "kda_ui.py": "a9225bcb4feb4244a6321fe23eb73c810d30bd9a2f361c67bd770083cc07265b",
+    "kda_catalog.py": "998453d80fa22e2a4fef658d1961b0c6b3b477d1dd5be4f2898e4ccb2363efaa",
+    "kda_profile.py": "df7eed7f9ee3b6a95ed8a8ddb4d988a42effb3625a058a9b639b8252068fb336",
+    "__init__.py": "403c771604a88b3acc213001a3be6f359632c2e7768fc321016c29bc47af1918",
+    "kda_batch.py": "75f660bf73a7c189c382a786bea6a6511e7758fcaac84aada91ce6412cd3f573",
+    "kda_setup.py": "8ccbad2dc2f7aad150e4bb4aeb8e83114723637ba6e15155a7473d66a8bb1166",
+    "kda_memory.py": "a0d4ab11f052ae58b2143dc693ad1989291df42e30a52dc32a209ac0784f1fba",
+    "kda_ame_activity.py": "bb5564fcd601b82af7d8b9262d9259bd96a2ea14e0a435422a8e048c1ada0248",
+    "kda_ame_memory.py": "ab361a087b761a4ee28363888d879b2557c59be1f5cb791445d62ee103102e59",
+    "kda_view.py": "07bd72a3e2af9b78494d73d381b825db9f48b42f2be7be8aba7861eafe5a94ce",
+    "kda_hardware_extra.py": "89592e084571e648b879f9df8353b390f902289a25962239769db34d4b541819",
+    "kda_jobs.py": "a1d3ba72ab0abb28313057cc8c3d384ad4724525a05aa01de10bbc435bda19ae",
+    "kda_clock.py": "9a88ef209a9479e8d95f5c7ebde953d535201147bb152c4740cc1a9046bb60c3"
+  },
+  "gates": [
+    {
+      "name": "installed/acceptance.json",
+      "status": "passed",
+      "checks_passed": 7,
+      "receipt_sha256": "e7dfdd05f18dd008c65ee18f461ea23eabb2e9be4a6d5e8d2d11be7ce4087eb7"
+    },
+    {
+      "name": "beta-installed/acceptance.json",
+      "status": "passed",
+      "checks_passed": 6,
+      "receipt_sha256": "fbcd9b4ea2b55bd126ba1b713db4b4bc3ad447a5766b6176bac316a7647232b2"
+    },
+    {
+      "name": "standard-install.json",
+      "status": "passed",
+      "checks_passed": 12,
+      "receipt_sha256": "251324b0bf5da321b3ce5043628b418639f0db052562768d89ef842dcadc9033"
+    },
+    {
+      "name": "profiler-live-acceptance.json",
+      "status": "passed",
+      "checks_passed": 7,
+      "receipt_sha256": "10bd7d5c574e929f7e22e1054d871ab1a511e9b20ec59bdb8a6a223496fc59a4"
+    },
+    {
+      "name": "browser-fa/acceptance.json",
+      "status": "passed",
+      "checks_passed": 7,
+      "receipt_sha256": "7d77e92f90f4de044217e37a94f08da79dad2da71590a2c370bc628baceab172"
+    },
+    {
+      "name": "browser-gemm/acceptance.json",
+      "status": "passed",
+      "checks_passed": 7,
+      "receipt_sha256": "7cd38bf1a7acd5e880e1a1d19f9ec539789b43c6bf06d9ca8e5518f1839b216c"
+    },
+    {
+      "name": "browser-live/acceptance.json",
+      "status": "passed",
+      "checks_passed": 7,
+      "receipt_sha256": "0e2b9d173e92eb04f00fcdd7c26af816eedc6bc950a6f9e6e607011acf5166c7"
+    },
+    {
+      "name": "profiler-software.log",
+      "status": "passed",
+      "checks_passed": 132,
+      "receipt_sha256": "bd4e0c72ed72a08514e7abf1918d7a74fc978ea365a435b0dd5134efe5741577"
+    },
+    {
+      "name": "profiler-clean-clone-tests.log",
+      "status": "passed",
+      "checks_passed": 132,
+      "receipt_sha256": "3fa4d003fcc87af065ccb515cbc6dfc8604afdee8f0d7116e68fedc4cd4e30f9"
+    },
+    {
+      "name": "kda-software.log",
+      "status": "passed",
+      "checks_passed": 26,
+      "receipt_sha256": "3e9ceda72a374e973ba1b87db409e2d4376236294cf8e43323629ca0e7bbbcf7"
+    }
+  ],
+  "clean_clone_receipt_sha256": "d214aa9e5ba75ae2a1f6615b89ec6c512636251bcdbf9cfaf4314fbcbd5fb491",
+  "fresh_rtl": {
+    "metrics": {
+      "ame_read_payload_bytes": 64,
+      "ame_read_service_cycles": 7,
+      "ame_read_outstanding_max": 1
+    },
+    "stages": [
+      {
+        "mode": "perf",
+        "emulator_invocations": 2,
+        "manifest_sha256": "c4576f5b6920c49a1e35c6e06eeb760e8eb190856144406c0cb3a9c49a676c28",
+        "started_utc": "2026-10-30T03:32:55.287616+00:00",
+        "finished_utc": "2026-10-30T03:37:12.447966+00:00"
+      },
+      {
+        "mode": "trace",
+        "emulator_invocations": 2,
+        "manifest_sha256": "6ffaecb50fd4e026541948e1c007112719e7c73efc8e74d21eacb3dcaa0479bc",
+        "started_utc": "2026-10-30T03:37:13.742782+00:00",
+        "finished_utc": "2026-10-30T03:41:58.836493+00:00"
+      }
+    ],
+    "workflow_wall_seconds": 627.6092281285673,
+    "scope": "One independent perf sample; tool acceptance, no new speedup claim."
+  },
+  "hosted_ci": "not_run_at_receipt_time",
+  "python": "3.12",
+  "browser": "Chromium 156",
+  "new_speedup_claim": false,
+  "publication": "Git push authorized after acceptance; no PyPI publication",
+  "historical_evidence": "Raw historical captures stay at their original XSAI-KDA paths. Fresh independent package collection is under XSAI-Prof/.validation/live; this directory is not included in Git."
+}
