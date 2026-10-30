@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Standalone entry point to the shared XSAI profiling report interface.
+set -euo pipefail
+XSAI_PROF_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+exec python3 "$XSAI_PROF_ROOT/scripts/cli.py" "$@"

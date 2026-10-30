@@ -1,0 +1,49 @@
+name: xsai-prof release checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install 'setuptools>=61' wheel
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/build_release.py --output release
+      - run: python tests/verify_profiler_install.py --output release/install-acceptance.json
+      - run: python tests/verify_beta_install.py --wheel release/*.whl --output beta-install
+      - run: python tests/verify_cli_workflow_install.py --wheel release/*.whl --output workflow-install
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xsai-prof-python-${{ matrix.python }}
+          path: |
+            release/
+            beta-install/acceptance.json
+            workflow-install/acceptance.json
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'setuptools>=61' wheel playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: python tools/build_release.py --output release
+      - run: python -m pip install --no-deps release/*.whl
+      - run: xsai-prof demo -o browser-demo
+      - run: xsai-prof analyze browser-demo/baseline -o browser-analysis
+      - run: python tests/verify_profiler_browser.py --analysis browser-analysis --output browser-acceptance
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xsai-prof-browser
+          path: browser-acceptance/
+  # Real RTL acceptance is deliberately separate: external simulator, toolchain
+  # and frozen workloads are not shipped in this repository or public CI.

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "ncu-cli",
+    "url": "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html",
+    "resolved_url": "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html",
+    "status": 200,
+    "path": "docs/research-sources/20261026/profiler-alignment/ncu-cli.html",
+    "sha256": "b6db571443a5a641b74ef5168105eae56e073ad77f190a3d5e96ea0db2ddac9a",
+    "bytes": 162822,
+    "retrieved_utc": "2026-10-26T08:26:34.562007+00:00"
+  },
+  {
+    "name": "msprof-readme",
+    "url": "https://raw.githubusercontent.com/Ascend/msprof/master/README.md",
+    "resolved_url": "https://raw.githubusercontent.com/Ascend/msprof/master/README.md",
+    "status": 200,
+    "path": "docs/research-sources/20261026/profiler-alignment/msprof-readme.md",
+    "sha256": "194506b5f330c5649fe8b241af82628c7c3eb6e36a09a2358db7f8fd67faaa26",
+    "bytes": 6643,
+    "retrieved_utc": "2026-10-26T08:26:31.797209+00:00"
+  },
+  {
+    "name": "msopprof-readme",
+    "url": "https://raw.githubusercontent.com/Ascend/msopprof/master/README.md",
+    "resolved_url": "https://raw.githubusercontent.com/Ascend/msopprof/master/README.md",
+    "status": 200,
+    "path": "docs/research-sources/20261026/profiler-alignment/msopprof-readme.md",
+    "sha256": "15e01110cb315c9bf613d918957c29fe3ca01b1b64b59ae453fd803a9390de52",
+    "bytes": 7315,
+    "retrieved_utc": "2026-10-26T08:26:31.790179+00:00"
+  },
+  {
+    "name": "msopprof-simulator",
+    "url": "https://raw.githubusercontent.com/Ascend/msopprof/master/docs/zh/user_guide/msopprof_simulator_user_guide.md",
+    "resolved_url": "https://raw.githubusercontent.com/Ascend/msopprof/master/docs/zh/user_guide/msopprof_simulator_user_guide.md",
+    "status": 200,
+    "path": "docs/research-sources/20261026/profiler-alignment/msopprof-simulator.md",
+    "sha256": "b8b8593aa891081d02511e9e733687f979c146aada74976381591cdfb9481dc4",
+    "bytes": 52017,
+    "retrieved_utc": "2026-10-26T08:26:32.155399+00:00"
+  }
+]

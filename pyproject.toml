@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xsai-prof"
+dynamic = ["version"]
+description = "Evidence-bound XSAI RTL operator profiling for humans and agents"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: POSIX :: Linux"]
+
+[project.scripts]
+xsai-prof = "xsai_prof.cli:main"
+
+[tool.setuptools]
+packages = ["xsai_prof"]
+package-dir = {xsai_prof = "scripts"}
+
+[tool.setuptools.dynamic]
+version = {attr = "xsai_prof.kda_version.__version__"}
+
+[project.urls]
+Repository = "https://github.com/LeleCheung/XSAI-Prof"
+Documentation = "https://github.com/LeleCheung/XSAI-Prof/tree/main/docs"

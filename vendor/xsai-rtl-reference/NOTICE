@@ -1,0 +1,133 @@
+Source excerpts in xsai_prof/kda_hardware_contract.py are from OpenXiangShan/XSAI and its utility, CUTE and coupledL2 components.
+Upstream locations, recorded revisions, file hashes and line numbers accompany each excerpt.
+
+Upstream license notices present in the referenced files:
+
+/** *************************************************************************************
+  * Copyright (c) 2020-2021 Institute of Computing Technology, Chinese Academy of Sciences
+  * Copyright (c) 2020-2021 Peng Cheng Laboratory
+  *
+  * XiangShan is licensed under Mulan PSL v2.
+  * You can use this software according to the terms and conditions of the Mulan PSL v2.
+  * You may obtain a copy of Mulan PSL v2 at:
+  * http://license.coscl.org.cn/MulanPSL2
+  *
+  * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+  * EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+  * MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+  *
+  * See the Mulan PSL v2 for more details.
+  * *************************************************************************************
+  */
+
+/** *************************************************************************************
+ * Copyright (c) 2020-2021 Institute of Computing Technology, Chinese Academy of Sciences
+ * Copyright (c) 2020-2021 Peng Cheng Laboratory
+ *
+ * XiangShan is licensed under Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ * http://license.coscl.org.cn/MulanPSL2
+ *
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+ * EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+ * MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+ *
+ * See the Mulan PSL v2 for more details.
+ * *************************************************************************************
+ */
+
+/***************************************************************************************
+* Copyright (c) 2021-2025 Beijing Institute of Open Source Chip (BOSC)
+* Copyright (c) 2020-2025 Institute of Computing Technology, Chinese Academy of Sciences
+* Copyright (c) 2020-2021 Peng Cheng Laboratory
+*
+* XiangShan is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2.
+* You may obtain a copy of Mulan PSL v2 at:
+*          http://license.coscl.org.cn/MulanPSL2
+*
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+* EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+* MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+*
+* See the Mulan PSL v2 for more details.
+***************************************************************************************/
+
+/***************************************************************************************
+* Copyright (c) 2020-2021 Institute of Computing Technology, Chinese Academy of Sciences
+* Copyright (c) 2020-2021 Peng Cheng Laboratory
+*
+* XiangShan is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2.
+* You may obtain a copy of Mulan PSL v2 at:
+*          http://license.coscl.org.cn/MulanPSL2
+*
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+* EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+* MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+*
+* See the Mulan PSL v2 for more details.
+*
+*
+* Acknowledgement
+*
+* This implementation is inspired by several key papers:
+* [1] Robert. M. Tomasulo. "[An efficient algorithm for exploiting multiple arithmetic units.]
+* (https://doi.org/10.1147/rd.111.0025)" IBM Journal of Research and Development (IBMJ) 11.1: 25-33. 1967.
+***************************************************************************************/
+
+/***************************************************************************************
+* Copyright (c) 2020-2021 Institute of Computing Technology, Chinese Academy of Sciences
+* Copyright (c) 2020-2021 Peng Cheng Laboratory
+*
+* XiangShan is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2.
+* You may obtain a copy of Mulan PSL v2 at:
+*          http://license.coscl.org.cn/MulanPSL2
+*
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+* EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+* MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+*
+* See the Mulan PSL v2 for more details.
+***************************************************************************************/
+
+/***************************************************************************************
+* Copyright (c) 2020-2021 Institute of Computing Technology, Chinese Academy of Sciences
+* Copyright (c) 2020-2021 Peng Cheng Laboratory
+*
+* XiangShan is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2.
+* You may obtain a copy of Mulan PSL v2 at:
+*          http://license.coscl.org.cn/MulanPSL2
+*
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+* EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+* MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+*
+* See the Mulan PSL v2 for more details.
+*
+*
+* Acknowledgement
+*
+* This implementation is inspired by several key papers:
+* [1] James E. Smith, and Andrew R. Pleszkun. "[Implementation of precise interrupts in pipelined processors.]
+* (https://dl.acm.org/doi/10.5555/327010.327125)" 12th Annual International Symposium on Computer Architecture (ISCA).
+* 1985.
+***************************************************************************************/
+
+/***************************************************************************************
+* Copyright (c) 2024-2025 Beijing Institute of Open Source Chip
+*
+* Utility is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2.
+* You may obtain a copy of Mulan PSL v2 at:
+*          http://license.coscl.org.cn/MulanPSL2
+*
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+* EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+* MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+*
+* See the Mulan PSL v2 for more details.
+***************************************************************************************/

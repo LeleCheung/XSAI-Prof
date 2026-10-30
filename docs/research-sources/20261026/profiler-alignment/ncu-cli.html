@@ -1,0 +1,2243 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The User Guide for Nsight Compute CLI." name="description" />
+<meta content="User Guide" name="keywords" />
+
+    <title>5. Nsight Compute CLI &#8212; NsightCompute</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/nvidia-sphinx-theme.css?v=df3ac72c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=767de534" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=730a6cc2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script rel="preload" src="../_static/modal-table.js"></script>
+    <script src="../_static/documentation_options.js?v=532923de"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scrollspy-patch.js?v=edc4054a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'NsightComputeCli/index';</script>
+    <script src="../_static/version-patch.js?v=3e13fdd2"></script>
+    <script src="../_static/js/resizable-sidebars.js?v=c7c89a66"></script>
+    <link rel="icon" href="../_static/nsight-compute.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Customization Guide" href="../CustomizationGuide/index.html" />
+    <link rel="prev" title="4. Nsight Compute" href="../NsightCompute/index.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Aug 27, 2026"/>
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="NsightCompute - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="NsightCompute - Home"/>
+  
+  
+    <p class="title logo__title">NsightCompute</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+
+<div>
+  <ul class="bd-navbar-elements navbar-nav">
+  
+    <li class="nav-item pst-header-nav-item">
+      
+      <span>v2026.3.1 |</span>
+      
+    </li>
+  
+    <li class="nav-item pst-header-nav-item">
+      
+      <a class="nav-link nav-external" href="https://developer.nvidia.com/nsight-compute-history">Archive</a>
+      
+    </li>
+  
+  </ul>
+</div>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="NsightCompute - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="NsightCompute - Home"/>
+  
+  
+    <p class="title logo__title">NsightCompute</p>
+  
+</a>
+
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+
+<div>
+  <ul class="bd-navbar-elements navbar-nav">
+  
+    <li class="nav-item pst-header-nav-item">
+      
+      <span>v2026.3.1 |</span>
+      
+    </li>
+  
+    <li class="nav-item pst-header-nav-item">
+      
+      <a class="nav-link nav-external" href="https://developer.nvidia.com/nsight-compute-history">Archive</a>
+      
+    </li>
+  
+  </ul>
+</div>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Table of Contents">
+  <p class="bd-links__title" role="heading" aria-level="1">Table of Contents</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Nsight Compute</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes/index.html">1. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ProfilingGuide/index.html">2. Profiling Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComputeTriage/index.html">3. Compute Triage Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NsightCompute/index.html">4. Nsight Compute</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Nsight Compute CLI</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Interfaces</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CustomizationGuide/index.html">1. Customization Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PythonReportInterface/index.html">2. Python Report Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NvRulesAPI/index.html">3. NvRules API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OccupancyCalculatorPythonInterface/index.html">4. Occupancy Calculator Python Interface</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Training/index.html">Training</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Release Information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Archives/index.html">Archives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Copyright and Licenses</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CopyrightAndLicenses/index.html">Copyright and Licenses</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><span class="section-number">5. </span>Nsight Compute CLI</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="nsight-compute-cli">
+<h1><span class="section-number">5. </span>Nsight Compute CLI<a class="headerlink" href="#nsight-compute-cli" title="Link to this heading">#</a></h1>
+<p>The User Guide for Nsight Compute CLI.</p>
+<section id="introduction">
+<h2><span class="section-number">5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>NVIDIA Nsight Compute CLI (ncu) provides a non-interactive way to profile applications from the command line. It can print the results directly on the command line or store them in a report file. It can also be used to simply launch the target application (see <a class="reference external" href="index.html#command-line-options-general">General</a> for details) and later attach with NVIDIA Nsight Compute or another ncu instance.</p>
+</section>
+<section id="quickstart">
+<h2><span class="section-number">5.2. </span>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Launch the target application with the command line profiler</strong></p>
+<p>The command line profiler launches the target application, instruments the target API, and collects profile results for the specified kernels. The CLI executable is called ncu. A shortcut with this name is located in the base directory of the NVIDIA Nsight Compute installation. The actual executable is located in the folder <code class="docutils literal notranslate"><span class="pre">target\windows-desktop-win7-x64</span></code> on Windows or <code class="docutils literal notranslate"><span class="pre">target/linux-desktop-glibc_2_11_3-x64</span></code> on Linux. By default, NVIDIA Nsight Compute is installed in <code class="docutils literal notranslate"><span class="pre">/usr/local/cuda-&lt;cuda-version&gt;/NsightCompute-&lt;version&gt;</span></code> on Linux and in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\NVIDIA</span> <span class="pre">Corporation\Nsight</span> <span class="pre">Compute</span> <span class="pre">&lt;version&gt;</span></code> on Windows.</p>
+<p>To collect the <code class="docutils literal notranslate"><span class="pre">basic</span></code> set for all kernel launches in the target application, launch:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ncu -o profile CuVectorAddMulti.exe
+</pre></div>
+</div>
+<p>The application runs in instrumented mode and for each kernel launch, a profile result is created. The results are written by default to profile.nsight-cuprof. Each output from the compute profiler starts with <code class="docutils literal notranslate"><span class="pre">==PROF==</span></code> The other lines are output from the application itself. For each profiled kernel, the name of the kernel function and the progress of data collection is shown. To collect all requested profile information, it may be required to replay the kernels multiple times. The total number of replay passes per kernel is shown after profiling has completed.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[Vector addition of 1144477 elements]
+==PROF== Connected to process 5268
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch A with 4471 blocks of 256 threads
+==PROF== Profiling &quot;vectorAdd_A&quot; - 0: 0%....50%....100% - 46 passes
+CUDA kernel launch B with 4471 blocks of 256 threads
+==PROF== Profiling &quot;vectorAdd_B&quot; - 1: 0%....50%....100% - 46 passes
+Copy output data from the CUDA device to the host memory
+Done
+==PROF== Disconnected from process 5268
+==PROF== Report: profile.ncu-rep
+</pre></div>
+</div>
+</li>
+<li><p><strong>Customizing data collection</strong></p>
+<p>Options are available to specify for which kernels data should be collected. <code class="docutils literal notranslate"><span class="pre">-c</span></code> limits the number of kernel launches collected. <code class="docutils literal notranslate"><span class="pre">-s</span></code> skips the given number of kernels before data collection starts. <code class="docutils literal notranslate"><span class="pre">-k</span></code> allows you to filter the kernels by a regex match of their names. <code class="docutils literal notranslate"><span class="pre">--kernel-id</span></code> allows you to filter kernels by context, stream, name and invocation.</p>
+<p>To limit what should be collected for each kernel launch, specify the exact *.section (files) by their identifier using <code class="docutils literal notranslate"><span class="pre">--section</span></code>. Each section file defines a set of metrics to be collected, grouped logically to solve a specific performance question. By default, the sections associated with the <code class="docutils literal notranslate"><span class="pre">basic</span></code> set are collected. Use <code class="docutils literal notranslate"><span class="pre">--list-sets</span></code> to see the list of currently available sets. Use <code class="docutils literal notranslate"><span class="pre">--list-sections</span></code> to see the list of currently available sections. The default search directory and location of pre-defined section files is also called <code class="docutils literal notranslate"><span class="pre">sections/</span></code>. See the <a class="reference external" href="../ProfilingGuide/index.html#sets-and-sections">Profiling Guide</a> for more details.</p>
+<p>Alternatively, you can collect a set of individual metrics using <code class="docutils literal notranslate"><span class="pre">--metrics</span></code>. The available metrics can be queried using <code class="docutils literal notranslate"><span class="pre">--query-metrics</span></code>. For an explanation of the naming conventions and structuring of metrics, see <a class="reference external" href="../ProfilingGuide/index.html#metrics-structure">Metrics Structure</a>.</p>
+<p>Most metrics in NVIDIA Nsight Compute are named using a base name and various suffixes, e.g. <em>sm__throughput.avg.pct_of_peak_sustained_elapsed</em>. The base name is <em>sm__throughput and the suffix is avg.pct_of_peak_sustained_elapsed</em>. This is because most metrics follow the same structure and have the same set of suffixes. You need to pass the base or full name to NVIDIA Nsight Compute when selecting a metric for profiling. Use <code class="docutils literal notranslate"><span class="pre">--query-metrics-mode</span> <span class="pre">suffix</span> <span class="pre">--metrics</span> <span class="pre">&lt;metrics</span> <span class="pre">list&gt;</span></code> to see the full names for the chosen metrics.</p>
+<p>Some additional metrics do not follow this structured naming. They are documented in the <a class="reference external" href="../ProfilingGuide/index.html#metrics-reference">Metrics Reference</a>.</p>
+</li>
+<li><p><strong>Changing command line output</strong></p>
+<p>By default, a temporary file is used to store profiling results, and data is printed to the command line. To permanently store the profiler report, use <code class="docutils literal notranslate"><span class="pre">-o</span></code> to specify the output filename.</p>
+<p>Besides storing results in a report file, the command line profiler can print results using different pages. Those pages correspond to the respective pages in the UI’s report. By default, the <a class="reference external" href="index.html#output-pages">Details page</a> is printed, if no explicit output file is specified. To select a different page or print in addition to storing in an explicit file, use the <code class="docutils literal notranslate"><span class="pre">--page=&lt;Page&gt;</span></code> command. Currently, the following pages are supported: <code class="docutils literal notranslate"><span class="pre">details,</span> <span class="pre">raw,</span> <span class="pre">source</span></code>.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--csv</span></code> to make any output comma separated and easier to process further. See <a class="reference external" href="index.html#command-line-options-console-output">Console Output</a> for further options, e.g. summary views.</p>
+</li>
+<li><p><strong>Open the report in the UI</strong></p>
+<p>The UI executable is called ncu-ui. A shortcut with this name is located in the base directory of the NVIDIA Nsight Compute installation. The actual executable is located in the folder <code class="docutils literal notranslate"><span class="pre">host\windows-desktop-win7-x64</span></code> on Windows or <code class="docutils literal notranslate"><span class="pre">host/linux-desktop-glibc_2_11_3-x64</span></code> on Linux. In the UI window, close the <em>Start Activity</em> dialog and open the report file through <em>File</em> &gt; <em>Open</em>, by dragging the report file into NVIDIA Nsight Compute.</p>
+<p>You can also specify the report file as a command line parameter to the executable, i.e. as <code class="docutils literal notranslate"><span class="pre">ncu-ui</span> <span class="pre">&lt;MyReport.ncu-rep&gt;</span></code>. Alternatively, when using NVIDIA Nsight Compute CLI on a platform with host support, <code class="docutils literal notranslate"><span class="pre">--open-in-ui</span></code> can be used directly with ncu to open a collected report in the user interface.</p>
+<p>The report opens in a new document window. For more information about the report, see the <a class="reference external" href="../NsightCompute/index.html#profiler-report">Profiler Report</a> for collecting profile information through NVIDIA Nsight Compute.</p>
+</li>
+</ol>
+</section>
+<section id="usage">
+<span id="id1"></span><h2><span class="section-number">5.3. </span>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<section id="modes">
+<h3><span class="section-number">5.3.1. </span>Modes<a class="headerlink" href="#modes" title="Link to this heading">#</a></h3>
+<p>Modes change the fundamental behavior of the command line profiler. Depending on which mode is chosen, different <a class="reference external" href="index.html#command-line-options">Command Line Options</a> become available. For example, <a class="reference external" href="index.html#command-line-options-launch">Launch</a> is invalid if the <em>Attach</em> mode is selected.</p>
+<ul>
+<li><p><strong>Launch-and-attach:</strong> The target application is launched on the local system with the tool’s injection libraries. Depending on which profiling options are chosen, selected kernels in the application are profiled and the results printed to the console or stored in a report file. The tool exits once the target application finishes or crashes, and once all results are processed.</p>
+<p>This is the default, and the only mode that supports profiling of child processes on selected platforms.</p>
+</li>
+<li><p><strong>Launch:</strong> The target application is launched on the local system with the tool’s injection libraries. As soon as the first intercepted API call is reached (commonly <code class="docutils literal notranslate"><span class="pre">cuInit()</span></code>), all application threads are suspended. The application now expects a tool to attach for profiling. You can attach using NVIDIA Nsight Compute or using the command line profiler’s <em>Attach</em> mode.</p></li>
+<li><p><strong>Attach:</strong> The tool tries to connect to a target application previously launched using NVIDIA Nsight Compute or using the command line profiler’s <em>Launch</em> mode. The tool can attach to a target on the local system or using a remote connection.</p></li>
+</ul>
+</section>
+<section id="multi-process-support">
+<span id="multi-process"></span><h3><span class="section-number">5.3.2. </span>Multi-Process Support<a class="headerlink" href="#multi-process-support" title="Link to this heading">#</a></h3>
+<p>The NVIDIA Nsight Compute CLI supports profiling multi-process applications.
+See <a class="reference external" href="index.html#command-line-options-launch">Launch</a> for which command line options are available.</p>
+<section id="platform-support">
+<h4>Platform Support<a class="headerlink" href="#platform-support" title="Link to this heading">#</a></h4>
+<p>On x86_64 Windows, NVIDIA Nsight Compute CLI supports profiling 64-bit processes launched from 32-bit applications by default.
+On x86_64 Linux, launching from 32-bit applications requires you to enable the <code class="docutils literal notranslate"><span class="pre">support-32bit</span></code> option, and the required 32-bit libraries must be installed on your system.
+On DRIVE OS Linux and DRIVE OS QNX, tracking of 32-bit applications is not supported.
+Profiling of 32-bit processes is not supported on any platform.</p>
+</section>
+<section id="mpi-support">
+<h4>MPI Support<a class="headerlink" href="#mpi-support" title="Link to this heading">#</a></h4>
+<p>NVIDIA Nsight Compute CLI can be used to profile applications launched with the <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> command.</p>
+<ul>
+<li><p>To profile all ranks on a node and store all the profiling data in a single report file:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ncu</span><span class="w"> </span><span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="n">processes</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">report</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mpirun</span><span class="w"> </span><span class="p">[</span><span class="n">mpi</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="n">app</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">app</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>To profile multi-node submissions, ensure that you specify unique report files per rank.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span><span class="w"> </span><span class="p">[</span><span class="n">mpi</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span><span class="w"> </span><span class="n">ncu</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">report_</span><span class="o">%</span><span class="n">q</span><span class="p">{</span><span class="n">OMPI_COMM_WORLD_RANK</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="n">app</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">app</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Alternatively, enable the multiprocess communicator:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span><span class="w"> </span><span class="p">[</span><span class="n">mpi</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span><span class="w"> </span><span class="n">ncu</span><span class="w"> </span><span class="o">--</span><span class="n">communicator</span><span class="o">=</span><span class="n">tcp</span><span class="w"> </span><span class="o">--</span><span class="n">communicator</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">peers</span><span class="o">=&lt;</span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">MPI</span><span class="w"> </span><span class="n">ranks</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="o">&lt;</span><span class="n">app</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">app</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>To profile a single rank one can use a wrapper script. The following script (called “wrap.sh”) profiles rank 0 only:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#!/bin/bash</span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="n">$OMPI_COMM_WORLD_RANK</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span>
+<span class="w">   </span><span class="n">ncu</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">report_$</span><span class="p">{</span><span class="n">OMPI_COMM_WORLD_RANK</span><span class="p">}</span><span class="w">  </span><span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="n">processes</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="s">&quot;$@&quot;</span>
+<span class="k">else</span>
+<span class="w">   </span><span class="s">&quot;$@&quot;</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+<p>and then execute:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span><span class="w"> </span><span class="p">[</span><span class="n">mpi</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">wrap</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">&lt;</span><span class="n">app</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">app</span><span class="w"> </span><span class="n">arguments</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>See below for profiling mandatory concurrent kernels across MPI processes.</p>
+</section>
+<section id="mandatory-concurrent-kernels">
+<h4>Mandatory Concurrent Kernels<a class="headerlink" href="#mandatory-concurrent-kernels" title="Link to this heading">#</a></h4>
+<p>Multi-process/multi-GPU applications that contain mandatory concurrent kernels (e.g., NCCL and NVSHMEM communication kernels)
+may be unable to make forward progress when profiled with default settings due to multi-pass data collection and serialization across processes within the same process tree.</p>
+<p><strong>For communication kernels launched from different process trees, use --communicator tcp</strong></p>
+<p>To make the tool synchronize launchs and replays across processes, use <code class="docutils literal notranslate"><span class="pre">--lockstep-kernel-launch</span></code>.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span><span class="w"> </span><span class="o">-</span><span class="n">np</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">ncu</span><span class="w"> </span><span class="o">--</span><span class="n">communicator</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="o">--</span><span class="n">communicator</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">peers</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">--</span><span class="n">lockstep</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">launch</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="o">&lt;</span><span class="n">app</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Additionally, <code class="docutils literal notranslate"><span class="pre">--lockstep-nvtx-include</span></code> and <code class="docutils literal notranslate"><span class="pre">--lockstep-nvtx-exclude</span></code> options can be set to limit
+synchronization to specific kernel ranges. See <a class="reference external" href="index.html#nvtx-filtering">NVTX Filtering</a> for additional information.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">args</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ncu</span><span class="w"> </span><span class="o">&lt;</span><span class="n">args</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">lockstep</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">launch</span><span class="w"> </span><span class="o">--</span><span class="n">lockstep</span><span class="o">-</span><span class="n">nvtx</span><span class="o">-</span><span class="n">include</span><span class="w"> </span><span class="n">nccl</span><span class="o">/</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="o">&lt;</span><span class="n">app</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><a class="reference external" href="index.html#launch">--communicator tcp</a> internally uses TCP sockets in a client-server architecture to send and receive message. One process
+at random is selected as the server process to manage sockets.
+In a multi-node system, the option <code class="docutils literal notranslate"><span class="pre">--communicator-tcp-hostname</span></code> must be set to manually select one host as the server.
+Below is an example slurm script that can be used to automate the process</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#!/bin/bash</span>
+<span class="n">nodes</span><span class="o">=</span><span class="p">(</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="w"> </span><span class="n">scontrol</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">hostnames</span><span class="w"> </span><span class="n">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="n">nodes_array</span><span class="o">=</span><span class="p">(</span><span class="n">$nodes</span><span class="p">)</span>
+<span class="n">head_node</span><span class="o">=</span><span class="n">$</span><span class="p">{</span><span class="n">nodes_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+<span class="n">head_node_addr</span><span class="o">=</span><span class="n">$</span><span class="p">(</span><span class="n">srun</span><span class="w"> </span><span class="o">--</span><span class="n">nodes</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">--</span><span class="n">ntasks</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="s">&quot;$head_node&quot;</span><span class="w"> </span><span class="n">hostname</span><span class="p">)</span>
+
+<span class="n">srun</span><span class="w"> </span><span class="n">ncu</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">communicator</span><span class="o">=</span><span class="n">tcp</span><span class="w">                           </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">communicator</span><span class="o">-</span><span class="n">tcp</span><span class="o">-</span><span class="n">hostname</span><span class="o">=</span><span class="s">&quot;$head_node_addr&quot;</span><span class="w">  </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">communicator</span><span class="o">-</span><span class="n">tcp</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">peers</span><span class="o">=</span><span class="s">&quot;$SLURM_NTASKS&quot;</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">lockstep</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">launch</span><span class="w">                     </span>\
+<span class="w">    </span><span class="p">.</span><span class="o">/</span><span class="n">application</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>You can use the <a class="reference external" href="../NsightCompute/index.html#report-merge-tool">Report Merge Tool</a> and <a class="reference external" href="../NsightCompute/index.html#clustering-window">Clustering Window</a> to aggregate and/or compare these results.</p>
+<p><strong>For communication kernels launched from the same process tree, use --communicator shmem</strong></p>
+<p>In single-node scenarios where the entire process tree is profiled by the same instance of <code class="docutils literal notranslate"><span class="pre">ncu</span></code>, the <a class="reference external" href="index.html#launch">--communicator shmem</a> option can be used.
+The processes must be able to communicate with each other using shared memory on the target system.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ncu</span><span class="w"> </span><span class="o">--</span><span class="n">communicator</span><span class="w"> </span><span class="n">shmem</span><span class="w"> </span><span class="o">--</span><span class="n">communicator</span><span class="o">-</span><span class="n">shmem</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">peers</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="o">-</span><span class="n">k</span><span class="w"> </span><span class="n">regex</span><span class="o">:</span><span class="n">nccl</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="n">torchrun</span><span class="w"> </span><span class="o">--</span><span class="n">nnodes</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">--</span><span class="n">nproc_per_node</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="n">pytorch_app</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>This mode only supports <em>kernel</em> and <em>range</em> replay modes and has limited filter options.
+If your app launches different types of kernels, select the concurrent ones using a name filter like <code class="docutils literal notranslate"><span class="pre">-k</span> <span class="pre">regex:nccl.*</span></code>.
+A single report is generated for all profile results.
+By default, the first CUDA context of each group is profiled. The <code class="docutils literal notranslate"><span class="pre">--devices</span></code> option can be used to select the primary GPU device(s) to profile.</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">--communicator-shmem-num-peers</span></code> to the number of processes participating in the concurrent workload <code class="docutils literal notranslate"><span class="pre">-k</span> <span class="pre">...</span></code> is not required but recommended.
+If the number of processes is not specified, the communicator will use all available processes per workload.
+If processes don’t reach the same workload at the same time, and since the number of processes per workload is unknown to the tool, Nsight Compute may try to profile a workload with insufficient participants.</p>
+<p>Launcher processes like <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> or <code class="docutils literal notranslate"><span class="pre">torchrun</span></code> are auto-excluded from profiling.
+You can manually exclude others using the <a class="reference external" href="index.html#launch">–target-processes-filter</a> option.</p>
+</section>
+</section>
+<section id="output-pages">
+<span id="id2"></span><h3><span class="section-number">5.3.3. </span>Output Pages<a class="headerlink" href="#output-pages" title="Link to this heading">#</a></h3>
+<p>The command line profiler supports printing results to the console using various pages. Each page has an equivalent in NVIDIA Nsight Compute’s <em>Profiler Report</em>. In the command line profiler, they are slightly adapted to fit console output. To select a page, use the <code class="docutils literal notranslate"><span class="pre">--page</span></code> option. By default, the details page is used. Note that if <code class="docutils literal notranslate"><span class="pre">--page</span></code> is not used but <code class="docutils literal notranslate"><span class="pre">--export</span></code> is, no results will be printed to the console.</p>
+<ul>
+<li><p><strong>Details:</strong> This page represents NVIDIA Nsight Compute’s <em>Details</em> page. For every profiled kernel launch, each collected is printed as section as a three-column table, followed by any rule results applied to this section. Rule results not associated with any section are printed after the kernel’s sections.</p>
+<p>The first section table column shows the metric name. If the metric was given a label in the section, it is used instead. The second column shows the metric unit, if available. The third column shows the unit value. Both metric unit and value are automatically adjusted to the most fitting order of magnitude. By default, only metrics defined in section headers are shown. This can be changed by passing the <code class="docutils literal notranslate"><span class="pre">--details-all</span></code> option on the command line.</p>
+<p>Some metrics will show multiple values, separated by “;”, e.g. memory_l2_transactions_global Kbytes 240; 240; 240; 240; 240. Those are instanced metrics, which have one value per represented instance. An instance can be a streaming multiprocessor, an assembly source line, etc.</p>
+</li>
+<li><p><strong>Raw:</strong> This page represents NVIDIA Nsight Compute’s <em>Raw</em> page. For every profiled kernel launch, each collected metric is printed as a three-column table. Besides metrics from sections, this includes automatically collected metrics such as device attributes and kernel launch information.</p>
+<p>The first column shows the metric name. The second and third columns show the metric unit and value, respectively. Both metric unit and value are automatically adjusted to the most fitting order of magnitude. No unresolved regex:, group:, or breakdown: metrics are included.</p>
+</li>
+</ul>
+</section>
+<section id="profile-import">
+<span id="id3"></span><h3><span class="section-number">5.3.4. </span>Profile Import<a class="headerlink" href="#profile-import" title="Link to this heading">#</a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">--import</span></code> option, saved reports can be imported into the command line profiler. When using this flag, most other options are not available, except for certain result filterting options. They are marked as such in the <a class="reference external" href="index.html#command-line-options-profile">Profile options</a> table.</p>
+</section>
+<section id="filtered-profile-export">
+<span id="id4"></span><h3><span class="section-number">5.3.5. </span>Filtered Profile Export<a class="headerlink" href="#filtered-profile-export" title="Link to this heading">#</a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">--import</span></code> and <code class="docutils literal notranslate"><span class="pre">--export</span></code> options together, along with supported filtering options, you can export desired results from one report to another.
+Most of the filtering <a class="reference external" href="index.html#command-line-options-profile">Profile options</a> that can be used with <code class="docutils literal notranslate"><span class="pre">--import</span></code> alone are also supported here, except for <code class="docutils literal notranslate"><span class="pre">--metrics</span></code> and <code class="docutils literal notranslate"><span class="pre">--section</span></code>.</p>
+</section>
+<section id="metrics-and-units">
+<h3><span class="section-number">5.3.6. </span>Metrics and Units<a class="headerlink" href="#metrics-and-units" title="Link to this heading">#</a></h3>
+<p>When available and applicable, metrics are shown along with their unit. This is to make it apparent if a metric represents cycles, threads, bytes/s, and so on.</p>
+<p>By default, units are scaled automatically so that metric values are shown with a reasonable order of magnitude. Units are scaled using their SI-factors, i.e. byte-based units are scaled using a factor of 1000 and the prefixes K, M, G, etc. Time-based units are also scaled using a factor of 1000, with the prefixes n, u and m. This scaling can be changed using a command line option, see <a class="reference external" href="index.html#command-line-options-console-output">Console Output</a> options for details.</p>
+</section>
+<section id="nvtx-filtering">
+<span id="id5"></span><h3><span class="section-number">5.3.7. </span>NVTX Filtering<a class="headerlink" href="#nvtx-filtering" title="Link to this heading">#</a></h3>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--nvtx-include</span> <span class="pre">&lt;configuration&gt;</span> <span class="pre">--nvtx-exclude</span> <span class="pre">&lt;configuration&gt;</span></code></div>
+<div class="line">These options are used to profile only those kernels which satisfy the conditions mentioned in the configuration. Through these options, you can choose which kernel falls into a specific range or collection of ranges.</div>
+</div>
+<p>You can use both options multiple times, mentioning all the <code class="docutils literal notranslate"><span class="pre">--nvtx-include</span></code> configurations followed by all <code class="docutils literal notranslate"><span class="pre">--nvtx-exclude</span></code> configurations. NVTX filtering requires <code class="docutils literal notranslate"><span class="pre">--nvtx</span></code> option.</p>
+<p>NVTX ranges are of two types: NvtxRangeStart/End and NvtxRangePush/Pop. The configuration syntax for both the types are briefly described below.
+Both range and domain names can contain whitespace. Note that “Domain” and “range” in below example are for illustration purposes only and are not required to mark domain or range names.</p>
+<ul>
+<li><p><strong>Push-Pop Ranges</strong></p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantifier</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/</p></td>
+<td><p>Delimiter between range names. When only a single range name is
+given, the delimiter must be appended to indicate that this
+refers to a push/pop range.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">A_range/</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">A_range/B</span> <span class="pre">range</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">A_range/\*/B</span> <span class="pre">range</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>[</p></td>
+<td><p>Range is at the bottom of the stack</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[A_range</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[A_range/+/Range</span> <span class="pre">Z</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>]</p></td>
+<td><p>Range is at the top of the stack</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Range</span> <span class="pre">Z]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Range</span> <span class="pre">C/\*/Range</span> <span class="pre">Z]</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>+</p></td>
+<td><p>Only one range between the two other ranges</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">range/+/Range</span> <span class="pre">D</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>*</p></td>
+<td><p>Zero or more range(s) between the two other ranges</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">range/\*/Range</span> <span class="pre">Z</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;</p></td>
+<td><p>Specify domain name. If not mentioned, assuming &lt;default domain&gt;</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Domain-A&#64;A_range</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">B&#64;A_range/\*/Range</span> <span class="pre">Z]</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Include kernels wrapped inside push/pop range ‘A_range’ of ‘&lt;default-domain&gt;’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;A_range/&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside push/pop range ‘A_range’ of ‘Domain-A’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;Domain-A@A_range/&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside push/pop range ‘A_range’ of ‘&lt;default domain&gt;’, where ‘A_range’ is at the bottom of the stack:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;[A_range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside push/pop ranges ‘A_range’ and ‘B range’ of ‘&lt;default domain&gt;’, with zero or many ranges between them:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;A_range/*/B range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Exclude kernels wrapped inside push/pop ranges ‘A_range’ and ‘B range’ of ‘&lt;default domain&gt;’, with zero or many ranges between them:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-exclude &quot;A_range/*/B range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside only push/pop range ‘A_range’ of ‘&lt;default domain&gt;’ but not inside ‘B range’ at the top of the stack:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;A_range/&quot; --nvtx-exclude &quot;B range]&quot; CuNvtx.exe
+</pre></div>
+</div>
+</li>
+<li><p><strong>Start-End Ranges</strong></p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantifier</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>,</p></td>
+<td><p>Delimiter between range names</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">A_range,B</span> <span class="pre">range</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">range,A_range,Range</span> <span class="pre">C</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>&#64;</p></td>
+<td><p>Specify domain name. If not mentioned, assuming &lt;default domain&gt;</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Domain-A&#64;A_range</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">B&#64;B</span> <span class="pre">range,Range</span> <span class="pre">Z</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Include kernels wrapped inside start/end range ‘A_range’ of ‘Domain-A’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;Domain-A@A_range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside both start/end ranges, ‘A_range’ and ‘B range’ of ‘&lt;default domain&gt;’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;A_range,B range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside start/end ranges, ‘A_range’ or ‘B range’ of ‘&lt;default domain&gt;’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;A_range&quot; --nvtx-include &quot;B range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include all kernels, except those which are wrapped inside start/end range ‘A_range’ of ‘&lt;default domain&gt;’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-exclude &quot;A_range&quot; CuNvtx.exe
+</pre></div>
+</div>
+<p>Include kernels wrapped inside only start/end ‘B range’ and not ‘A_range’ of ‘&lt;default domain&gt;’:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;B range&quot;--nvtx-exclude &quot;A_range&quot; CuNvtx.exe
+</pre></div>
+</div>
+</li>
+<li><p><strong>Regular Expression Support</strong></p>
+<p>The configuration syntax for both the types NvtxRangeStart/End and NvtxRangePush/Pop is the same. Additionally, to use regular expressions, follow the following syntax.</p>
+<ul>
+<li><p>Provide prefix ‘regex:’ to treat nvtx config as regular expression.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;regex:Domain[A-Z]@Range[0-9]/&quot; CuNvtx.exe
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The kernels wrapped inside push/pop range with matching regex ‘Range[0-9]’ of domain with matching regex ‘Domain[A-Z]’ are profiled.</div>
+</div>
+</li>
+<li><p>Provide ‘/’ as a prefix to “[” or “]” only for the range part of the config if “[” or “]” is at the start or at the end of the range part, respectively. This is needed so that NCU can distinguish if “[” or “]” is part of the regex or represents the top/bottom of the stack.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --nvtx --nvtx-include &quot;regex:[0-9]domainA@/[0-9]rangeA,RangeC[0-9/]&quot; CuNvtx.exe
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The kernels wrapped inside start/end ranges with matching regex ‘[0-9]rangeA’ and ‘RangeC[0-9]’ of domain with matching regex ‘[0-9]domainA’ are profiled.</div>
+</div>
+</li>
+<li><p>If any quantifier is part of the domain/range name, you need to use ‘\\’ or ‘\’ as a prefix. For the “$” quantifier, only the ‘\\’ prefix is valid.</p></li>
+</ul>
+</li>
+<li><p><strong>Additional Information</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>--nvtx-include &quot;DomainA@RangeA,DomainB@RangeB&quot; //Not a valid config
+</pre></div>
+</div>
+<p>In a single NVTX configuration, multiple ranges with regard to a single domain can be specified. Mentioning ranges from different domains inside a single NVTX config is not supported.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>--nvtx-include &quot;A_range\[i\]&quot;
+</pre></div>
+</div>
+<p>Quantifiers <code class="docutils literal notranslate"><span class="pre">&#64;</span> <span class="pre">,</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">/</span> <span class="pre">*</span> <span class="pre">+</span></code>, including regular expression quantifiers, can be used in domain/range names using prefix ‘\’. The kernels wrapped inside ‘A_range[i]’ of ‘&lt;default domain&gt;’ in the application are profiled.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>--nvtx-include &quot;A_range&quot;  //Start/End configuration
+--nvtx-inlcude &quot;A_range/&quot; //Push/Pop configuration
+--nvtx-inlcude &quot;A_range]&quot; //Push/Pop configuration
+</pre></div>
+</div>
+<p>If the domain/range name contains ‘\’, you need to provide ‘\\\\’ in the config.</p>
+<p>Do not use ‘\\\\’ before any quantifier.</p>
+<p>Including/Excluding only single range for Push/Pop configuration without specifying stack frame position ‘[’ or ‘]’, use ‘/’ quantifier at the end.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>--nvtx-include &quot;A_range/*/B range&quot;
+</pre></div>
+</div>
+<p>The order in which you mention Push/Pop configurations is important. In the above example, ‘A_range’ should be below ‘B range’ in the stack of ranges so that the kernel is profiled.</p>
+<p>NVTX filtering honors cudaProfilerStart() and cudaProfilerStop(). There is no support for ranges with no name.</p>
+</li>
+</ul>
+</section>
+<section id="config-file">
+<h3><span class="section-number">5.3.8. </span>Config File<a class="headerlink" href="#config-file" title="Link to this heading">#</a></h3>
+<div class="line-block">
+<div class="line">Using the <code class="docutils literal notranslate"><span class="pre">--config-file</span> <span class="pre">on/off</span></code> option, parsing parameters from config file can be enabled or disabled.</div>
+<div class="line">Using the <code class="docutils literal notranslate"><span class="pre">--config-file-path</span> <span class="pre">&lt;path&gt;</span></code> option, default path and name of config file can be overwritten.</div>
+<div class="line">By default, config-file with name <code class="docutils literal notranslate"><span class="pre">config.ncu-cfg</span></code> is searched in the current working directory, <code class="docutils literal notranslate"><span class="pre">$HOME/.config/NVIDIA</span> <span class="pre">Corporation</span></code> on Linux and <code class="docutils literal notranslate"><span class="pre">%APPDATA%\NVIDIA</span> <span class="pre">Corporation\</span></code> on Windows. If a valid config file is found, ncu parses the file and initializes any command line parameters to the values set in the file. If the same command line parameter is also set explicitly during the current invocation, the latter takes precedence.</div>
+</div>
+<p>Parameters can be set under various general modes and ncu command line parameters are used to determine which general-mode needs to be parsed from the config file. See the table below for more details.</p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command line parameters</p></th>
+<th class="head"><p>General Mode</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ncu –mode launch-and-attach CuVectorAddMulti.exe</p></td>
+<td><p>Launch-and-attach</p></td>
+</tr>
+<tr class="row-odd"><td><p>ncu –mode launch CuVectorAddMulti.exe</p></td>
+<td><p>Launch</p></td>
+</tr>
+<tr class="row-even"><td><p>ncu –mode attach</p></td>
+<td><p>Attach</p></td>
+</tr>
+<tr class="row-odd"><td><p>ncu –list-sets, ncu –list-sections, ncu –list-rules and ncu –list-metrics</p></td>
+<td><p>List</p></td>
+</tr>
+<tr class="row-even"><td><p>ncu –query-metrics</p></td>
+<td><p>Query</p></td>
+</tr>
+<tr class="row-odd"><td><p>ncu -i &lt;MyReport.ncu-rep&gt;</p></td>
+<td><p>Import</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These general modes should be defined in the config file using INI-like syntax as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[&lt;general-mode&gt;]
+&lt;parameter&gt;=&lt;value&gt;
+;&lt;comments&gt;
+</pre></div>
+</div>
+<p><strong>Sample usage</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[Launch-and-attach]
+-c = 1
+--section = LaunchStats, Occupancy
+[Import]
+--open-in-ui
+-c = 1
+--section = LaunchStats, Occupancy
+</pre></div>
+</div>
+<p>From this configuration, ncu will parse parameters set under <code class="docutils literal notranslate"><span class="pre">[Launch-and-attach]</span></code> block whenever an application is profiled in <code class="docutils literal notranslate"><span class="pre">launch-and-attach</span></code> mode. In the same manner, parameters set under <code class="docutils literal notranslate"><span class="pre">[Import]</span></code> block will be parsed whenever a report is imported. Different modes can be clubbed together if there exists a set of parameters which is common to each mode. Sample shown above can be rewritten after clubbing both modes as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[Launch-and-attach, import]
+-c = 1
+--section = LaunchStats, Occupancy
+[Import]
+--open-in-ui
+</pre></div>
+</div>
+<p><strong>Additional points</strong></p>
+<ul>
+<li><p>Options like <code class="docutils literal notranslate"><span class="pre">--open-in-ui</span></code> do not expect any value to be set. These options should not be passed any value.</p></li>
+<li><p>Options like <code class="docutils literal notranslate"><span class="pre">--section</span></code> can be passed multiple times in the command line. These options should be written only once under a general-mode with all required values seperated by comma as shown below. Explicitly setting values for these options will not overwrite the config file values. Instead, all values will be composed together and set to the option.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[&lt;general-mode&gt;]
+&lt;parameter&gt;=&lt;value1&gt;,&lt;value2&gt;,...
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="kernel-renaming">
+<span id="id6"></span><h3><span class="section-number">5.3.9. </span>Kernel Renaming<a class="headerlink" href="#kernel-renaming" title="Link to this heading">#</a></h3>
+<p>In some cases, it gets difficult to distinguish between results using the kernel function or mangled name.
+However, demangled names can be quite long and complex to understand. To handle such cases, kernel demangled names are auto-simplified to some extent.
+To see original kernel demangled names, disable kernel renaming using <code class="docutils literal notranslate"><span class="pre">--rename-kernels</span> <span class="pre">off</span></code> option.
+If a simplified kernel demangled name turns out to be not useful, you can rename it through the configuration file.
+A kernel renaming configuration file should be a YAML file written in the following format:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-
+ - Original: mergeRanksAndIndicesKernel(unsigned int *, unsigned int *, unsigned int, unsigned int, unsigned int)
+ - Renamed: Merge Rank Kernel
+-
+ - Original: void mergeSortSharedKernel&lt;(unsigned int)1&gt;(unsigned int *, unsigned int *, unsigned int *, unsigned int *, unsigned int)
+ - Renamed: Merge Sort Kernel
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">By default, kernel renaming config file with name <code class="docutils literal notranslate"><span class="pre">ncu-kernel-renames.yaml</span></code> is searched in the similar way as <a class="reference external" href="index.html#config-file">config file</a> is searched.</div>
+<div class="line">To avoid manually writing demangled names in the config file, one can use <code class="docutils literal notranslate"><span class="pre">--rename-kernels-export</span> <span class="pre">on</span></code> option to export demangled names from the report to the config file with mappings for renaming them.</div>
+<div class="line">Using the <code class="docutils literal notranslate"><span class="pre">--rename-kernels-path</span> <span class="pre">&lt;path&gt;</span></code> option, default path and name of the file used while importing renamed names and exporting can be overwritten.</div>
+<div class="line">Note that renamed names can later be used to filter kernels in the report using <code class="docutils literal notranslate"><span class="pre">--kernel-name</span></code> and <code class="docutils literal notranslate"><span class="pre">--kernel-id</span></code> options.</div>
+<div class="line">Similary, you can use the renamed names to filter the kernels while profiling as well.</div>
+</div>
+<p><strong>Sample usage</strong></p>
+<p>To profile a kernel with demangled name ‘void SomeComplexKernel(unsigned int, unsigned int, unsigned int)’, you can import the following kernel renaming configuration file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-
+ - Original: void SomeComplexKernel(unsigned int, unsigned int, unsigned int)
+ - Renamed: MySimpleKernel
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu
+--rename-kernels-path /path/to/ncu-kernel-renames.yaml
+--kernel-name-base demangled
+--kernel-name MySimpleKernel
+app.exe
+</pre></div>
+</div>
+<p>If you export the report from the above command, you will see the kernel demangled name renamed to ‘MySimpleKernel’ in the report even if you remove the renaming configuration file.
+If you want to see the original demangled name in the report, you can always rename it again using the renaming configuration file or simply disable kernel renaming using <code class="docutils literal notranslate"><span class="pre">--rename-kernels</span> <span class="pre">off</span></code> option.
+Note that the renaming can be done on demangled names only. That’s why you need to use <code class="docutils literal notranslate"><span class="pre">--kernel-name-base</span> <span class="pre">demangled</span></code> option to use the renamed demangled names for kernel filtering.</p>
+<p>You can also use the kernel renaming configuration file while exporting kernels from one report to another using <a class="reference external" href="index.html#filtered-profile-export">Filtered Profile Export</a> feature.
+For example, if you rename the kernels in the configuration file as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-
+ - Original: KernelA(unsigned int, unsigned int, unsigned int)
+ - Renamed: KernelA_Export
+-
+ - Original: KernelB(unsigned int, unsigned int, unsigned int)
+ - Renamed: KernelB_NoExport
+-
+ - Original: KernelC(unsigned int, unsigned int, unsigned int)
+ - Renamed: KernelC_Export
+</pre></div>
+</div>
+<p>And then use this configuration file while exporting kernels with the following command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu
+--export /path/to/NewReport.ncu-rep
+--import /path/to/OldReport.ncu-rep
+--rename-kernels-path /path/to/ncu-kernel-renames.yaml
+--kernel-name-base demangled
+--kernel-name regex:.*_Export
+</pre></div>
+</div>
+<p>Then, only the kernels with renamed names ‘KernelA_Export’ and ‘KernelC_Export’ will be exported to the new report.</p>
+</section>
+<section id="cpu-call-stack-filtering">
+<span id="cpu-stack-filtering"></span><h3><span class="section-number">5.3.10. </span>CPU Call Stack Filtering<a class="headerlink" href="#cpu-call-stack-filtering" title="Link to this heading">#</a></h3>
+<p>CPU call stack filtering allows you to filter the launches based on their CPU call stacktrace. You can collect two types of CPU call stacks: “Native” and “Python” using the <code class="docutils literal notranslate"><span class="pre">--call-stack</span></code> or <code class="docutils literal notranslate"><span class="pre">--call-stack-type</span></code> option.
+You can filter the launches based on the collected call stack using the following options:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--native-include</span> <span class="pre">&lt;configuration&gt;</span> <span class="pre">--native-exclude</span> <span class="pre">&lt;configuration&gt;</span></code></div>
+<div class="line">Through these options, you can choose kernel launches via a specific native call stack frame function or set of functions to include or exclude from the profiling.</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--python-include</span> <span class="pre">&lt;configuration&gt;</span> <span class="pre">--python-exclude</span> <span class="pre">&lt;configuration&gt;</span></code></div>
+<div class="line">Through these options, you can choose kernel launches via a specific python call stack frame function or set of functions to include or exclude from the profiling.</div>
+</div>
+<p>These options are used to profile only those kernels which satisfy the conditions mentioned in the configurations.
+You can use each option multiple times, mentioning all the “include” and “exclude” configurations as needed. In order to use these include/exclude options, you must collect the respective call stack type using the <code class="docutils literal notranslate"><span class="pre">--call-stack</span></code> or <code class="docutils literal notranslate"><span class="pre">--call-stack-type</span></code> option.
+However, if you have already collected the call stack into the report file, you can directly use the include/exclude options to filter the results while importing the report.</p>
+<div class="line-block">
+<div class="line">Include/Exclude configuration follows the below format:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;Module&gt;&#64;&lt;File&gt;&#64;&lt;Function&gt;</span></code></div>
+<div class="line">where &lt;Module&gt; and &lt;File&gt; are optional. If you do not provide any one of them, your configuration will be searched in all the modules or files respectively. You must provide the &lt;Function&gt; expression otherwise the configuration will be considered invalid.</div>
+</div>
+<ul>
+<li><p>&lt;File&gt;&#64;&lt;Function&gt; usage is similar to the usage of &lt;Domain&gt;&#64;&lt;Range&gt; in <a class="reference external" href="index.html#nvtx-filtering">NVTX Filtering</a></p>
+<blockquote>
+<div><div class="pst-scrollable-table-container"><table class="table-no-stripes table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantifier</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/</p></td>
+<td><p>Delimiter between function names. Function before the delimiter
+should precede the function after the delimiter in the call stack
+backtrace.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FuncA/FuncB</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FuncA/\*/FuncB</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>[</p></td>
+<td><p>Function is at the bottom of the stack</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[FuncA</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[FuncA/+/FuncB</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>]</p></td>
+<td><p>Function is at the top of the stack</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FuncB]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FuncA/\*/FuncB]</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>+</p></td>
+<td><p>Only one function between the two other functions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FuncA/+/FuncB</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>*</p></td>
+<td><p>Zero or more function(s) between the two other functions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FuncA/\*/FuncB</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;</p></td>
+<td><p>Specify file name. If not mentioned, assuming &lt;default file&gt;
+which will match all filenames. You can mention only the filename
+or a path to the file.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FileA.py&#64;FuncA</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FileB.cpp&#64;FuncB/\*/FuncD]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">/path/to/FileB.cpp&#64;FuncB]</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>&#64;&#64;</p></td>
+<td><p>Specify module name. If not mentioned, assuming &lt;default module&gt;
+which will match all modules. Similar to file name, you can
+mention only the module name or a path to the module.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModuleA&#64;&#64;FuncA</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ModuleA&#64;FileA.cpp&#64;FuncA</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Include kernels launched via function ‘FuncA’ in file ‘FileA.py’ across all modules:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type python --python-include FileA.py@FuncA python CuPythonScript.py
+</pre></div>
+</div>
+<p>Include kernels launched via function ‘FuncA’ in file ‘FileA.cpp’ and ‘ModuleA:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type native --native-include ModuleA@FileA.cpp@FuncA CuApp.exe
+</pre></div>
+</div>
+<p>Exclude kernels launched via function ‘FuncA’ of a native call stack frame but include kernels launched via function ‘FuncB’ of a python call stack frame:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type native --call-stack-type python --native-exclude FuncA --python-include FuncB python CuPythonScript.py
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Regular Expression Support</strong></p>
+<p>To use regular expressions, follow the following syntax.</p>
+<ul>
+<li><p>Provide prefix ‘regex:’ to treat the config as regular expression.</p>
+<div class="line-block">
+<div class="line">The kernels launched via function with matching regex ‘Func[0-9]’ of file with matching regex ‘File[A-Z]’ are profiled.</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type native --native-include &quot;regex:File[A-Z]@Func[0-9]&quot; CuApp.exe
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The kernels launched via function with matching regex ‘Func[0-9]’ of file with matching regex ‘File[A-Z]’ of module with matching regex ‘Module[A-Z]’ are profiled.</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type native --native-include &quot;regex:Module[A-Z]@File[A-Z]@Func[0-9]&quot; CuApp.exe
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Additional Information</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type native --native-include &quot;FileA.cpp@FuncA,FileB.cpp@FuncB&quot; CuApp.exe
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">This will not work as you might expect. You cannot pass multiple configurations in a single include/exclude option. You must use the option multiple times to pass multiple configurations.</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ncu --call-stack-type native --native-include @FuncA --native-include @FileA.cpp@FuncB CuApp.exe
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Both configurations are invalid as you cannot pass an empty &lt;file&gt; or &lt;module&gt; before the delimiter ‘&#64;’.</div>
+</div>
+</li>
+</ul>
+<p>Look at <a class="reference external" href="index.html#nvtx-filtering">NVTX Push/Pop Range Filtering</a> section to understand the function expression format in detail.</p>
+</section>
+</section>
+<section id="command-line-options">
+<h2><span class="section-number">5.4. </span>Command Line Options<a class="headerlink" href="#command-line-options" title="Link to this heading">#</a></h2>
+<p>For long command line options, passing a unique initial substring can be sufficient.</p>
+<section id="general">
+<span id="command-line-options-general"></span><h3><span class="section-number">5.4.1. </span>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id22">
+<caption><span class="caption-text">General Command Line Options</span><a class="headerlink" href="#id22" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>h,help</p></td>
+<td><p>Show help message</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>v,version</p></td>
+<td><p>Show version information</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>mode</p></td>
+<td><p>Select the mode of interaction with the target application</p>
+<ul class="simple">
+<li><p><strong>launch-and-attach:</strong> Launch the target application and immediately attach for profiling.</p></li>
+<li><p><strong>launch:</strong> Launch the target application and suspend in the first intercepted API call, wait for tool to attach.</p></li>
+<li><p><strong>attach:</strong> Attach to a previously launched application to which no other tool is attached.</p></li>
+</ul>
+</td>
+<td><p>launch-and-attach</p></td>
+</tr>
+<tr class="row-odd"><td><p>p,port</p></td>
+<td><p>Base port used for connecting to target applications for <code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">launch/attach</span></code></p></td>
+<td><p>49152</p></td>
+</tr>
+<tr class="row-even"><td><p>max-connections</p></td>
+<td><p>Maximum number of ports for connecting to target applications</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-odd"><td><p>config-file</p></td>
+<td><p>Use config.ncu-cfg config file to set parameters. Searches in the current working directory, in “$HOME/.config/NVIDIA Corporation” on Linux and in “%APPDATA%\NVIDIA Corporation\” on Windows.</p></td>
+<td><p>on</p></td>
+</tr>
+<tr class="row-even"><td><p>config-file-path</p></td>
+<td><p>Override the default path for config file.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="launch">
+<span id="command-line-options-launch"></span><h3><span class="section-number">5.4.2. </span>Launch<a class="headerlink" href="#launch" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id23">
+<caption><span class="caption-text">Launch Command Line Options</span><a class="headerlink" href="#id23" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>check-exit-code</p></td>
+<td><p>Check the application exit code and print an error if it is different than 0. If set, <code class="docutils literal notranslate"><span class="pre">--replay-mode</span> <span class="pre">application</span></code> will stop after the first pass if the exit code is not 0.</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>forward-signals</p></td>
+<td><p>Forwards SIGINT and SIGTERM signals to the application root process. On Windows, only CTRL_C_EVENT (equivalent to SIGINT) is handled.</p>
+<p><strong>Note:</strong>
+- On Windows, CTRL_C_EVENT is forwarded to the entire process group, with this option specified NCU will skip the signal.
+- On both Windows and Linux, Ctrl+C input from the terminal sends the signal to entire process group and behavior of signal forwarding is unspecified.</p>
+</td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>injection-path-64</p></td>
+<td><p>Override the default path for the injection libraries. The injection libraries are used by the tools to intercept relevant APIs (like CUDA or NVTX).</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>preload-library</p></td>
+<td><p>Prepend a shared library to be loaded by the application before the injection libraries. This option can be given multiple times and the libraries will be loaded in the order they were specified.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>call-stack</p></td>
+<td><p>Enable CPU Call Stack collection.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>call-stack-type</p></td>
+<td><p>Set the call stack type(s) that should be collected. More than one type may be specified.
+Implies <cite>–call-stack</cite>. Available modes are:</p>
+<ul class="simple">
+<li><p><strong>native:</strong> Collect a regular CPU call stack.</p></li>
+<li><p><strong>python:</strong> Collect a Python CPU call stack.</p></li>
+</ul>
+<p>Note that Python call stack collection requires CPython version 3.9 or later.</p>
+</td>
+<td><p>native</p>
+<p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--call-stack-type</span> <span class="pre">native</span> <span class="pre">--call-stack-type</span> <span class="pre">python</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>communicator</p></td>
+<td><p>Enable Multiprocess Communicator.</p>
+<ul class="simple">
+<li><p><strong>none:</strong> Disables the communicator.</p></li>
+<li><p><strong>tcp:</strong> TCP-based inter-process tree communication for multiple ncu instances.</p></li>
+<li><p><strong>shmem:</strong> Shared memory-based intra-process tree communication for one ncu instance.</p></li>
+</ul>
+</td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-odd"><td><p>communicator-tcp-num-peers</p></td>
+<td><p>Set number of expected communicator peers (number of NCU instances).</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>communicator-tcp-hostname</p></td>
+<td><p>Set hostname/IP address for the TCP communicator server.</p></td>
+<td><p>127.0.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>communicator-tcp-port</p></td>
+<td><p>Set port for the TCP communicator server.</p></td>
+<td><p>49217</p></td>
+</tr>
+<tr class="row-even"><td><p>lockstep-kernel-launch</p></td>
+<td><p>Launch kernels in lockstep across all communicator instances.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>lockstep-nvtx-include</p></td>
+<td><p>Adds include statement to the NVTX filter, for kernels to be synchronized. See <a class="reference external" href="index.html#nvtx-filtering">NVTX expressions</a>.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>lockstep-nvtx-exclude</p></td>
+<td><p>Adds exclude statement to the NVTX filter, for kernels to be synchronized. See <a class="reference external" href="index.html#nvtx-filtering">NVTX expressions</a>.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>nvtx</p></td>
+<td><p>Enable NVTX support for tools.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>nvtx-push-pop-scope</p></td>
+<td><p>Specify scope of push-pop ranges.</p>
+<ul class="simple">
+<li><p><strong>thread:</strong> NVTX Push/Pop ranges are scoped per thread.</p></li>
+<li><p><strong>process:</strong> NVTX push/pop ranges are scoped per process.</p></li>
+</ul>
+</td>
+<td><p>thread</p></td>
+</tr>
+<tr class="row-odd"><td><p>target-processes</p></td>
+<td><p>Select the processes you want to profile. Available modes are:</p>
+<ul class="simple">
+<li><p><strong>application-only</strong> Profile only the root application process.</p></li>
+<li><p><strong>all</strong> Profile the application and all its child processes.</p></li>
+</ul>
+</td>
+<td><p>all</p></td>
+</tr>
+<tr class="row-even"><td><p>target-processes-filter</p></td>
+<td><p>Set the comma separated expressions to filter which processes are profiled.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;process</span> <span class="pre">name&gt;</span></code> Set the exact process name to include for profiling.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regex:&lt;expression&gt;</span></code> Set the regex to filter matching process name profiling. On shells that recognize regular expression symbols as special characters (e.g. Linux bash),
+the expression needs to be escaped with quotes, e.g. <code class="docutils literal notranslate"><span class="pre">--target-processes-filter</span> <span class="pre">regex:&quot;.*Process&quot;</span></code>.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">regex:</span></code>, the expression must not include any commas.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exclude:&lt;process</span> <span class="pre">name&gt;</span></code> Set the exact process name to exclude for profiling.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exclude-tree:&lt;process</span> <span class="pre">name&gt;</span></code> Set the exact process name to exclude for profiling and further process tracking. None of its child processes will be profiled, even if they match a positive filter.
+This option is not available on Windows.</p></li>
+</ul>
+<p>The executable name part of the process will be considered in the match. Processing of filters stops at the first match.
+If any positive filter is specified, no process that is not matching a positive filter is profiled.</p>
+</td>
+<td><p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--target-processes-filter</span> <span class="pre">MatrixMul</span></code> Filter all processes having executable name exactly as “MatrixMul”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--target-processes-filter</span> <span class="pre">regex:Matrix</span></code>Filter all processes that include the string “Matrix” in their executable name, e.g. “MatrixMul” and “MatrixAdd”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--target-processes-filter</span> <span class="pre">MatrixMul,MatrixAdd</span></code>Filter all processes having executable name exactly as “MatrixMul” or “MatrixAdd”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--target-processes-filter</span> <span class="pre">exclude:MatrixMul.exe</span></code> Exclude only “MatrixMul.exe”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--target-processes-filter</span> <span class="pre">exclude-tree:ChildLauncher,ParentProcess</span></code> Exclude “ChildLauncher” and all its sub-processes.
+Include (only) “ParentProcess”, but not if it’s a child of “ChildLauncher”.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>support-32bit</p></td>
+<td><p>Support profiling processes launched from 32-bit applications. This option is only available on x86_64 Linux. On Windows, tracking 32-bit applications is enabled by default.</p></td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-even"><td><p>null-stdin</p></td>
+<td><p>Launch the application with ‘/dev/null’ as its standard input. This avoids applications reading from standard input being stopped by <code class="docutils literal notranslate"><span class="pre">SIGTTIN</span></code> signals and hanging when running as backgrounded processes.</p></td>
+<td><p>false</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="attach">
+<span id="command-line-options-attach"></span><h3><span class="section-number">5.4.3. </span>Attach<a class="headerlink" href="#attach" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id24">
+<caption><span class="caption-text">Attach Command Line Options</span><a class="headerlink" href="#id24" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hostname</p></td>
+<td><p>Set the hostname or IP address for connecting to the machine on which the target application is running. When attaching to a local target application, use 127.0.0.1.</p></td>
+<td><p>127.0.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>process-id</p></td>
+<td><p>Attach only to the process with this process ID. If no matching attachable process is found, the profiler exits with an error.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="profile">
+<span id="command-line-options-profile"></span><h3><span class="section-number">5.4.4. </span>Profile<a class="headerlink" href="#profile" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id25">
+<caption><span class="caption-text">Profile Command Line Options</span><a class="headerlink" href="#id25" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default/Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>devices</p></td>
+<td><p>List the GPU devices to enable profiling on, separated by comma. <a class="footnote-reference brackets" href="#fn1" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>All devices</p>
+<p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--devices</span> <span class="pre">0,2</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>filter-mode</p></td>
+<td><p>Set the filtering mode for kernel launches. Available modes:</p>
+<ul class="simple">
+<li><p><strong>global:</strong> Apply provided launch filters on kernel launches collectively.</p></li>
+<li><p><strong>per-gpu:</strong> Apply provided launch filters on kernel launches separately on each device.</p></li>
+<li><p><strong>per-launch-config:</strong> Apply kernel filters and launch filters on kernel launches separately for each unique combination of GPU launch parameters i.e. Grid Size, Block Size and Shared Memory.</p></li>
+</ul>
+<p>Effective launch filters for all modes include e.g. <code class="docutils literal notranslate"><span class="pre">--launch-count</span></code>, <code class="docutils literal notranslate"><span class="pre">--launch-skip</span></code>, and <code class="docutils literal notranslate"><span class="pre">--kernel-id</span></code>.</p>
+</td>
+<td><p>global
+See <a class="reference external" href="../Training/index.html#filter-options">Filter Options</a> for examples.</p></td>
+</tr>
+<tr class="row-even"><td><p>kernel-id</p></td>
+<td><p>Set the identifier to use for matching kernels. If the kernel does not match the identifier, it will be ignored for profiling.</p>
+<p>The identifier must be of the following format: <em>context-id:stream-id:[name-operator:]kernel-name:invocation-nr</em></p>
+<ul class="simple">
+<li><p><strong>context-id</strong> is the CUDA context ID or regular expression of context id, NVTX name.</p></li>
+<li><p><strong>stream-id</strong> is the CUDA stream ID or regular expression of stream id, NVTX name.</p></li>
+<li><p><strong>name-operator</strong> is an optional operator to <em>kernel-name</em>. Currently, <em>regex</em> is the only supported operator.</p></li>
+<li><p><strong>kernel-name</strong> is the expression to match the kernel name. By default, this is a full, literal match to what is specified by <code class="docutils literal notranslate"><span class="pre">--kernel-name-base</span></code>. When specifying the optional <em>regex</em> name operator, this is a partial regular expression match to what is specified by <code class="docutils literal notranslate"><span class="pre">--kernel-name-base</span></code>.</p></li>
+<li><p><strong>invocation-nr</strong> is the N’th invocation of matching kernel. In the default <code class="docutils literal notranslate"><span class="pre">global</span></code> filter mode, invocations are counted per unique kernel name (and per context/stream ID, if provided).
+To count invocations separately on each device, use <code class="docutils literal notranslate"><span class="pre">--filter-mode</span> <span class="pre">per-gpu</span></code>. To count invocations separately for each unique launch configuration (i.e. Grid Size, Block Size, and Shared Memory), use <code class="docutils literal notranslate"><span class="pre">--filter-mode</span> <span class="pre">per-launch-config</span></code>.
+Multiple invocations can also be specified using regular expressions.</p></li>
+</ul>
+<p>If the context/stream ID is a positive number, it will be strictly matched against the CUDA context/stream ID. Otherwise it will be treated as a regular expression and matched against the context/stream name specified using the NVTX library. <a class="footnote-reference brackets" href="#fn1" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</td>
+<td><p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--kernel-id</span> <span class="pre">::foo:2</span></code> For kernel “foo”, match the second invocation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--kernel-id</span> <span class="pre">:::&quot;.*5|3&quot;</span></code> For all kernels, match the third invocation, and all for which the invocation number ends in “5”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--kernel-id</span> <span class="pre">::regex:^.*foo$:</span></code> Match all kernels ending in “foo”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--kernel-id</span> <span class="pre">::regex:^(?!foo):</span></code> Match all kernels except those starting with “foo”. Note that depending on your OS and shell, `
+you might need to quote the expression, e.g. using single quotes in Linux <em>bash</em>: <code class="docutils literal notranslate"><span class="pre">--kernel-id</span> <span class="pre">::regex:'^(?!foo)':</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--kernel-id</span> <span class="pre">1|5:2::7</span></code> Match all seventh kernel invocations of kernels lauched from context 1 + stream 2, and context 5 + stream 2.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>k,kernel-name</p></td>
+<td><p>Set the expression to use when matching kernel names.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;kernel</span> <span class="pre">name&gt;</span></code> Set the kernel name for an exact match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regex:&lt;expression&gt;</span></code> Set the regex to use for matching the kernel name. On shells that recognize regular expression symbols as special characters (e.g. Linux bash), the expression needs to be escaped with quotes, e.g. <code class="docutils literal notranslate"><span class="pre">--kernel-name</span> <span class="pre">regex:&quot;.*Foo&quot;</span></code>.</p></li>
+</ul>
+<p>If the kernel name or the provided expression do not match, it will be ignored for profiling. <a class="footnote-reference brackets" href="#fn1" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</td>
+<td><p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">-k</span> <span class="pre">foo</span></code> Match all kernels named exactly “foo”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-k</span> <span class="pre">regex:foo</span></code> Match all kernels that include the string “foo”, e.g. “foo” and “fooBar”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-k</span> <span class="pre">regex:&quot;foo|bar&quot;</span></code> Match all kernels including the strings “foo” or “bar”, e.g. “foo”, “foobar”, “_bar2”.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>kernel-name-base</p></td>
+<td><p>Set the basis for <code class="docutils literal notranslate"><span class="pre">--kernel-name</span></code>, and <code class="docutils literal notranslate"><span class="pre">--kernel-id</span></code> kernel-name.  <a class="footnote-reference brackets" href="#fn1" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Options are:</p>
+<ul class="simple">
+<li><p><strong>function:</strong> Function name without parameters, templates etc. e.g. <code class="docutils literal notranslate"><span class="pre">dmatrixmul</span></code></p></li>
+<li><p><strong>demangled:</strong> Demangled function name, including parameters, templates, etc. e.g. <code class="docutils literal notranslate"><span class="pre">dmatrixmul(float*,int,int)</span></code>. Use <a class="reference external" href="index.html#kernel-renaming">Kernel Renaming</a> to rename the demangled name.</p></li>
+<li><p><strong>mangled:</strong> Mangled function name. e.g. <code class="docutils literal notranslate"><span class="pre">_Z10dmatrixmulPfiiS_iiS_</span></code></p></li>
+</ul>
+</td>
+<td><p>function</p></td>
+</tr>
+<tr class="row-odd"><td><p>rename-kernels</p></td>
+<td><p>Perform simplification on the kernel demangled names. Rename demangled names using a config file. See <a class="reference external" href="index.html#kernel-renaming">Kernel Renaming</a> for more details.</p></td>
+<td><p>on</p></td>
+</tr>
+<tr class="row-even"><td><p>rename-kernels-export</p></td>
+<td><p>Export demangled names from the report to a new file and specify mappings for renaming them. Use <code class="docutils literal notranslate"><span class="pre">--rename-kernels-path</span></code> option to specify the export file path.</p></td>
+<td><p>off</p></td>
+</tr>
+<tr class="row-odd"><td><p>rename-kernels-path</p></td>
+<td><p>Override the default path of the configuration file which should be used while importing renamed kernels or exporting demangled names. Only valid while using <code class="docutils literal notranslate"><span class="pre">--rename-kernels</span></code> or <code class="docutils literal notranslate"><span class="pre">--rename-kernels-export</span></code>.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>c,launch-count</p></td>
+<td><p>Limit the number of profiled kernel launches. The count is only incremented for launches that match the kernel filters.<a class="footnote-reference brackets" href="#fn1" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>s,launch-skip</p></td>
+<td><p>Set the number of kernel launches to skip before starting to profile kernels. The number takes into account only launches that match the kernel filters. <a class="footnote-reference brackets" href="#fn1" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>launch-skip-before-match</p></td>
+<td><p>Set the number of kernel launches to skip before starting to profile. The count is incremented for all launches, regardless of the kernel filters. <a class="footnote-reference brackets" href="#fn1" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>range-filter</p></td>
+<td><p>Filter to profile specified instance(s) of matching NVTX ranges or start/stop ranges created through cu(da)ProfilerStart/Stop APIs.</p>
+<p>Specify in format <em>[yes/no/on/off]:[start/stop range instance(s)]:[NVTX range instance(s)]</em></p>
+<ul class="simple">
+<li><p>[yes/no/on/off] : default is ‘no/off’. If set to ‘yes/on’ then NVTX range numbering starts from 1 inside every start/stop range.</p></li>
+<li><p>provide numbers in regex form e.g, [2-4] or 2|3|4 to profile 2nd, 3rd and 4th instance of the matching range.</p></li>
+<li><p>NVTX range numbers will be counted for matching range provided using –nvtx-include.</p></li>
+</ul>
+</td>
+<td><p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--range-filter</span> <span class="pre">:2:3</span> <span class="pre">--nvtx-include</span> <span class="pre">A/</span></code> Match 2nd start/stop range and also 3rd NVTX push/pop range A in the app.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--range-filter</span> <span class="pre">yes:2:3</span> <span class="pre">--nvtx-include</span> <span class="pre">A/</span></code> Match 3rd NVTX push/pop range A from 2nd start/stop range.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>kill</p></td>
+<td><p>Terminate the target application when the requested –launch-count was profiled. Allowed values:</p>
+<ul class="simple">
+<li><p>on/off</p></li>
+<li><p>yes/no</p></li>
+</ul>
+</td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-odd"><td><p>replay-mode</p></td>
+<td><p>Mechanism used for replaying a kernel launch multiple times to collect all requested profiling data:</p>
+<ul class="simple">
+<li><p><strong>kernel:</strong> Replay individual kernel launches “transparently” during the execution of the application. See <a class="reference external" href="../ProfilingGuide/index.html#kernel-replay">Kernel Replay</a> for more details.</p></li>
+<li><p><strong>application:</strong> Relaunch the entire application multiple times. Requires deterministic program execution. See <a class="reference external" href="../ProfilingGuide/index.html#application-replay">Application Replay</a> for more details.</p></li>
+<li><p><strong>range:</strong> Replay ranges of CUDA API calls and kernel launches “transparently” during the execution of the application. Ranges must be defined using <code class="docutils literal notranslate"><span class="pre">cu(da)ProfilerStart/Stop</span></code> API pairs or <a class="reference external" href="index.html#nvtx-filtering">NVTX expressions</a>. See <a class="reference external" href="../ProfilingGuide/index.html#range-replay">Range Replay</a> for more details.</p></li>
+<li><p><strong>app-range:</strong> Profile ranges without API capture by relaunching the entire application multiple times. Requires deterministic program execution. Ranges must be defined using <code class="docutils literal notranslate"><span class="pre">cu(da)ProfilerStart/Stop</span></code> API pairs or <a class="reference external" href="index.html#nvtx-filtering">NVTX expressions</a>. See <a class="reference external" href="../ProfilingGuide/index.html#application-range-replay">Application Range Replay</a> for more details.</p></li>
+</ul>
+</td>
+<td><p>kernel</p></td>
+</tr>
+<tr class="row-even"><td><p>app-replay-buffer</p></td>
+<td><p>Application replay buffer location.</p>
+<ul class="simple">
+<li><p><strong>file:</strong> Replay pass data is buffered in a temporary file. The report is created after profiling completed. This mode is more scalable, as the amount of required memory does not scale with the number of profiled kernels.</p></li>
+<li><p><strong>memory:</strong> Replay pass data is buffered in memory, and the report is created while profiling. This mode can result in better performance if the filesystem is slow, but the amount of required memory scales with the number of profiled kernels.</p></li>
+</ul>
+</td>
+<td><p>file</p></td>
+</tr>
+<tr class="row-odd"><td><p>app-replay-match</p></td>
+<td><p>Application replay kernel matching strategy. For all options, kernels are matched on a per-process and per-device (GPU) basis. Below options are used to configure the applied strategy in more detail.</p>
+<ul class="simple">
+<li><p><strong>name:</strong> Kernels are matched in the following order: 1. (mangled) name, 2. order of execution</p></li>
+<li><p><strong>grid:</strong> Kernels are matched in the following order: 1. (mangled) name, 2. CUDA grid/block size, 3. order of execution</p></li>
+<li><p><strong>all:</strong> Kernels are matched in the following order: 1. (mangled) name, 2. CUDA grid/block size, 3. CUDA context ID, 4. CUDA stream ID, 5. order of execution</p></li>
+</ul>
+</td>
+<td><p>grid</p></td>
+</tr>
+<tr class="row-even"><td><p>app-replay-mode</p></td>
+<td><p>Application replay kernel matching mode:</p>
+<ul class="simple">
+<li><p><strong>strict:</strong> Requires all filtered kernels to match across all replay passes in the exact order.</p></li>
+<li><p><strong>balanced:</strong> Requires all filtered kernels to match across all replay passes, without strict ordering.</p></li>
+<li><p><strong>relaxed:</strong> Produces results only for filtered kernels that could be matched across replay passes. Unmatched kernels are dropped.</p></li>
+</ul>
+</td>
+<td><p>balanced</p></td>
+</tr>
+<tr class="row-odd"><td><p>range-replay-options</p></td>
+<td><p>Range replay options, separated by comma. Below options are supported:</p>
+<ul>
+<li><p><strong>enable-greedy-sync</strong></p>
+<p>Insert ctx sync for applicable deferred APIs during capture.</p>
+</li>
+<li><p><strong>disable-host-save</strong></p>
+<p>Disable saving device-mapped host allocations for every kernel but capture it only once before the first kernel launch.</p>
+</li>
+<li><p><strong>disable-host-restore</strong></p>
+<p>Disable restoring device-written host allocations.</p>
+</li>
+<li><p><strong>disable-dependent-kernel-detection</strong></p>
+<p>Disable dependent kernel detection before capturing device-mapped host allocations for each kernel.</p>
+</li>
+</ul>
+</td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>graph-profiling</p></td>
+<td><p>CUDA graph profiling mode:</p>
+<ul>
+<li><p><strong>node</strong></p>
+<p>Profile individual kernel nodes as regular CUDA kernels.</p>
+</li>
+<li><p><strong>graph</strong></p>
+<p>Profile entire graphs as one workload (but disable profiling of individual graph kernel nodes). See the <a class="reference external" href="../ProfilingGuide/index.html#graph-profiling">Profiling Guide</a> for more information on this mode.</p>
+</li>
+</ul>
+</td>
+<td><p>node</p></td>
+</tr>
+<tr class="row-odd"><td><p>list-sets</p></td>
+<td><p>List all section sets found in the searched section folders and exit. For each set, the associated sections are shown, as well as the estimated number of metrics collected as part of this set. This number can be used as an estimate of the relative profiling overhead per kernel launch of this set.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>set</p></td>
+<td><p>Identifier of section set to collect. If not specified, the <code class="docutils literal notranslate"><span class="pre">basic</span></code> set is collected. The full set of sections can be collected with <code class="docutils literal notranslate"><span class="pre">--set</span> <span class="pre">full</span></code>.</p></td>
+<td><p>If no <code class="docutils literal notranslate"><span class="pre">--set</span></code> option is given, the <code class="docutils literal notranslate"><span class="pre">basic</span></code> set is collected. If not specified and <code class="docutils literal notranslate"><span class="pre">--section</span></code> or
+<code class="docutils literal notranslate"><span class="pre">--metrics</span></code> are used, no sets are collected. Use <code class="docutils literal notranslate"><span class="pre">--list-sets</span></code> to see which set is the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>list-sections</p></td>
+<td><p>List all sections found in the searched section folders and exit.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>section</p></td>
+<td><p>Add a section identifier to collect in one of the following ways:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;section</span> <span class="pre">identifier&gt;</span></code> Set the section identifier for an exact match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regex:&lt;expression&gt;</span></code> Regular expression allows matching full section identifier. For example, <code class="docutils literal notranslate"><span class="pre">.*Stats</span></code>, matches all sections ending with ‘Stats’. On shells that recognize regular expression symbols as special characters (e.g. Linux bash), the expression needs to be escaped with quotes, e.g. <code class="docutils literal notranslate"><span class="pre">--section</span> <span class="pre">&quot;regex:.*Stats&quot;</span></code>.</p></li>
+</ul>
+<p>This option is ignored when used with <code class="docutils literal notranslate"><span class="pre">--import</span></code> and <code class="docutils literal notranslate"><span class="pre">--page</span> <span class="pre">raw</span></code> or <code class="docutils literal notranslate"><span class="pre">--page</span> <span class="pre">source</span></code>. <a class="footnote-reference brackets" href="#fn1" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</td>
+<td><p>If no <code class="docutils literal notranslate"><span class="pre">--section</span></code> options are given, the sections associated with the <code class="docutils literal notranslate"><span class="pre">basic</span></code> set are collected. If no sets are found, all sections are collected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>section-folder</p></td>
+<td><p>Add a non-recursive search path for <code class="docutils literal notranslate"><span class="pre">.section</span></code> and <code class="docutils literal notranslate"><span class="pre">.py</span></code> rule files. Section files in this folder will be made available to the <code class="docutils literal notranslate"><span class="pre">--section</span></code> option. Individual files from directories including an <code class="docutils literal notranslate"><span class="pre">.ncu-ignore</span></code> file are ignored.</p></td>
+<td><p>If no <code class="docutils literal notranslate"><span class="pre">--section-folder</span></code> options are given, the <code class="docutils literal notranslate"><span class="pre">sections</span></code> folder is added by default.</p></td>
+</tr>
+<tr class="row-even"><td><p>section-folder-recursive</p></td>
+<td><p>Add a recursive search path for <code class="docutils literal notranslate"><span class="pre">.section</span></code> and <code class="docutils literal notranslate"><span class="pre">.py</span></code> rule files. Section files in this folder and all folders below will be made available to the <code class="docutils literal notranslate"><span class="pre">--section</span></code> option. Individual files from directories including an <code class="docutils literal notranslate"><span class="pre">.ncu-ignore</span></code> file are ignored.</p></td>
+<td><p>If no <code class="docutils literal notranslate"><span class="pre">--section-folder</span></code> options are given, the <code class="docutils literal notranslate"><span class="pre">sections</span></code> folder is added by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>list-rules</p></td>
+<td><p>List all rules found in the searched section folders and exit.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>apply-rules</p></td>
+<td><p>Apply active and applicable rules to each profiling result. Use <code class="docutils literal notranslate"><span class="pre">--rule</span></code> to limit which rules to apply. Allowed values:</p>
+<ul class="simple">
+<li><p>on/off</p></li>
+<li><p>yes/no</p></li>
+</ul>
+</td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>rule</p></td>
+<td><p>Add a rule identifier to apply. Implies <code class="docutils literal notranslate"><span class="pre">--apply-rules</span> <span class="pre">yes</span></code>.</p></td>
+<td><p>If no <code class="docutils literal notranslate"><span class="pre">--rule</span></code> options are given, all applicable rules in the <code class="docutils literal notranslate"><span class="pre">sections</span></code> folder are applied.</p></td>
+</tr>
+<tr class="row-even"><td><p>import-sass</p></td>
+<td><p>Import ELF cubins into the report. Cubins include SASS, PTX and meta information. Allowed values:</p>
+<ul class="simple">
+<li><p>on/off</p></li>
+<li><p>yes/no</p></li>
+</ul>
+<p>Disabling this is not recommended, as it removes most source-related metrics and analysis.</p>
+</td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>import-source</p></td>
+<td><p>If available from -lineinfo, correlated CUDA source files are permanently imported into the report. Allowed values:</p>
+<ul class="simple">
+<li><p>on/off</p></li>
+<li><p>yes/no</p></li>
+</ul>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--source-folders</span></code> option to provide missing source files.</p>
+</td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-even"><td><p>source-folders</p></td>
+<td><p>Add comma separated recursive search paths for missing CUDA source files to import into the report.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>list-metrics</p></td>
+<td><p>List all metrics collected from active sections. If the list of active sections is restricted using the <code class="docutils literal notranslate"><span class="pre">--section</span></code> option, only metrics from those sections will be listed.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>query-metrics</p></td>
+<td><p>Query available metrics for the devices on system. Use <code class="docutils literal notranslate"><span class="pre">--devices</span></code> and <code class="docutils literal notranslate"><span class="pre">--chips</span></code> to filter which devices to query. Note that by default, listed metric names need to be appended a valid suffix in order for them to become valid metrics. See <code class="docutils literal notranslate"><span class="pre">--query-metrics-mode</span></code> for how to get the list of valid suffixes, or check the <a class="reference external" href="../ProfilingGuide/index.html#metrics-structure">Profiling Guide</a>.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>query-metrics-mode</p></td>
+<td><p>Set the mode for querying metrics. Implies <code class="docutils literal notranslate"><span class="pre">--query-metrics</span></code>. Available modes:</p>
+<ul class="simple">
+<li><p><strong>base:</strong> Only the base names of the metrics.</p></li>
+<li><p><strong>suffix:</strong> Suffix names for the base metrics. This gives the list of all metrics derived from the base metrics. Use <code class="docutils literal notranslate"><span class="pre">--metrics</span></code> to specify the base metrics to query.</p></li>
+<li><p><strong>all:</strong> Full names for all metrics. This gives the list of all base metrics and their suffix metrics.</p></li>
+</ul>
+</td>
+<td><p>base</p></td>
+</tr>
+<tr class="row-even"><td><p>query-metrics-collection</p></td>
+<td><p>Set which metric collection kind to query. Implies <code class="docutils literal notranslate"><span class="pre">--query-metrics</span></code>. Available collections:</p>
+<ul class="simple">
+<li><p><strong>device:</strong> Query CUDA device attributes.</p></li>
+<li><p><strong>groups:</strong> Query metric groups available for profiling.</p></li>
+<li><p><strong>launch:</strong> Query launch attributes.</p></li>
+<li><p><strong>numa:</strong> Query NUMA topology metrics.</p></li>
+<li><p><strong>nvlink:</strong> Query NVLink topology metrics.</p></li>
+<li><p><strong>occupancy:</strong> Query occupancy calculation metrics.</p></li>
+<li><p><strong>pmsampling:</strong> Query metrics available for <a class="reference external" href="../ProfilingGuide/index.html#pm-sampling">PM sampling</a>.</p></li>
+<li><p><strong>profiling:</strong> Query metrics available for profiling.</p></li>
+<li><p><strong>source:</strong> Query source metrics available for profiling.</p></li>
+<li><p><strong>stats:</strong> Query metrics generated by the profiler to inform about profiling statistics.</p></li>
+<li><p><strong>warpsampling:</strong> Query metrics available for <a class="reference external" href="../ProfilingGuide/index.html#warp-sampling">Warp sampling</a>.</p></li>
+</ul>
+</td>
+<td><p>profiling</p></td>
+</tr>
+<tr class="row-odd"><td><p>metrics</p></td>
+<td><p>Specify all metrics to be profiled, separated by comma. If no <code class="docutils literal notranslate"><span class="pre">--section</span></code> options are given, only the temporary section containing all metrics listed using this option is collected. If <code class="docutils literal notranslate"><span class="pre">--section</span></code> options are given in addition to <code class="docutils literal notranslate"><span class="pre">--metrics</span></code>, all metrics from those sections and from <code class="docutils literal notranslate"><span class="pre">--metrics</span></code> are collected.</p>
+<p>Names passed to this option support the following prefixes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">regex:&lt;expression&gt;</span></code> expands to all metrics that partially match the expression. Enclose the regular expression in ^…$ to force a full match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group:&lt;name&gt;</span></code> lists all metrics of the metric group with that name. See section files for valid group names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">breakdown:&lt;metric&gt;</span></code> expands to the input metrics of the high-level throughput metric.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pmsampling:&lt;metric&gt;</span></code> collects the metric using PM sampling. Only single-pass metrics that don’t require SASS-patching (_sass_) are supported. Using this prefix adds a timeline element to the report’s details page.</p></li>
+</ul>
+<p>Combining multiple prefixes is not supported.</p>
+<p>If a metric requires a suffix to be valid, and neither <code class="docutils literal notranslate"><span class="pre">regex:</span></code> nor <code class="docutils literal notranslate"><span class="pre">group:</span></code> are used, this option automatically expands the name to all available first-level sub-metrics.</p>
+<p>When importing a report, <code class="docutils literal notranslate"><span class="pre">:group</span></code> and <code class="docutils literal notranslate"><span class="pre">:breakdown</span></code> are not supported.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">regex:</span></code>, the expression must not include any commas.   <a class="footnote-reference brackets" href="#fn1" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>metric-distribution-groups</p></td>
+<td><p>Set the number of groups to distribute metrics to.</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>disable-extra-suffixes</p></td>
+<td><p>Disable the collection of extra suffixes (avg, min, max, sum) for all metrics. Only collect what is explicitly specified.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>list-chips</p></td>
+<td><p>List all supported chips that can be used with <code class="docutils literal notranslate"><span class="pre">--chips</span></code>.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>chips</p></td>
+<td><p>Specify the chips for querying metrics, separated by comma.</p></td>
+<td><p><strong>Examples</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--chips</span> <span class="pre">tu102,gh100</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>profile-from-start</p></td>
+<td><p>Set if application should be profiled from its start. Allowed values:</p>
+<ul class="simple">
+<li><p>on/off</p></li>
+<li><p>yes/no</p></li>
+</ul>
+</td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>disable-profiler-start-stop</p></td>
+<td><p>Disable profiler start/stop. When enabled, <code class="docutils literal notranslate"><span class="pre">cu(da)ProfilerStart/Stop</span></code> API calls are ignored.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>quiet</p></td>
+<td><p>Suppress all profiling output.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>verbose</p></td>
+<td><p>Make profiler output more verbose.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cache-control</p></td>
+<td><p>Control the behavior of the GPU caches during profiling. Allowed values:</p>
+<ul class="simple">
+<li><p><strong>all:</strong> All GPU caches are flushed before each kernel replay iteration during profiling. While metric values in the execution environment of the application might be slightly different without invalidating the caches, this mode offers the most reproducible metric results across the replay passes and also across multiple runs of the target application.</p></li>
+<li><p><strong>none:</strong> No GPU caches are flushed during profiling. This can improve performance and better replicates the application behavior if only a single kernel replay pass is necessary for metric collection. However, some metric results will vary depending on prior GPU work, and between replay iterations. This can lead to inconsistent and out-of-bounds metric values.</p></li>
+</ul>
+</td>
+<td><p>all</p></td>
+</tr>
+<tr class="row-odd"><td><p>clock-control</p></td>
+<td><p>Control the behavior of the GPU clocks during profiling. Allowed values:</p>
+<ul class="simple">
+<li><p><strong>base:</strong> GPC and memory clocks are locked to their respective base (rated tdp) frequency during profiling.</p></li>
+<li><p><strong>boost:</strong> GPC and memory clocks are locked to their respective turbo boost frequency during profiling. If setting boost clock is not supported by GPU or driver, falls back to locking clocks to ‘base’ if possible.</p></li>
+<li><p><strong>force-boost:</strong> GPC and memory clocks are locked to their respective turbo boost frequency during profiling. Supports Ampere+ on NVIDIA kernel mode driver 560 and Turing+ on driver 580 or newer.</p></li>
+<li><p><strong>none:</strong> No GPC or memory frequencies are changed during profiling.</p></li>
+<li><p><strong>reset:</strong> Reset GPC and memory clocks for all or the selected devices and exit. Use if a previous, killed execution of ncu left the GPU clocks in a locked state.</p></li>
+</ul>
+<p>See also the documentation on <a class="reference external" href="../ProfilingGuide/index.html#clock-control">Clock Control</a> for more details.</p>
+</td>
+<td><p>boost</p></td>
+</tr>
+<tr class="row-even"><td><p>pipeline-boost-state</p></td>
+<td><p>Control the Tensor Core boost state. Setting stable Tensor Core boosting is recommended for application performance profiling ensuring predictive run to run performance. Allowed values:</p>
+<ul class="simple">
+<li><p><strong>stable:</strong> Set the Tensor Core boost state to stable.</p></li>
+<li><p><strong>dynamic:</strong> Set the Tensor Core boost state to dynamic.</p></li>
+</ul>
+</td>
+<td><p>stable</p></td>
+</tr>
+<tr class="row-odd"><td><p>nvtx-include</p></td>
+<td><p>Adds an include statement to the <a class="reference external" href="index.html#nvtx-filtering">NVTX filter</a>, which allows selecting kernels to profile based on NVTX ranges. <a class="footnote-reference brackets" href="#fn1" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>nvtx-exclude</p></td>
+<td><p>Adds an exclude statement to the <a class="reference external" href="index.html#nvtx-filtering">NVTX filter</a>, which allows selecting kernels to profile based on NVTX ranges. <a class="footnote-reference brackets" href="#fn1" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>native-include</p></td>
+<td><p>Adds an include statement to the <a class="reference external" href="index.html#cpu-stack-filtering">Native call stack filtering</a>, which allows selecting kernels to profile based on native CPU stack frames. <a class="footnote-reference brackets" href="#fn1" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>native-exclude</p></td>
+<td><p>Adds an exclude statement to the <a class="reference external" href="index.html#cpu-stack-filtering">Native call stack filtering</a>, which allows selecting kernels to profile based on native CPU stack frames. <a class="footnote-reference brackets" href="#fn1" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>python-include</p></td>
+<td><p>Adds an include statement to the <a class="reference external" href="index.html#cpu-stack-filtering">Python call stack filtering</a>, which allows selecting kernels to profile based on python CPU stack frames. <a class="footnote-reference brackets" href="#fn1" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>python-exclude</p></td>
+<td><p>Adds an exclude statement to the <a class="reference external" href="index.html#cpu-stack-filtering">Python call stack filtering</a>, which allows selecting kernels to profile based on python CPU stack frames. <a class="footnote-reference brackets" href="#fn1" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="fn1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id7">1</a>,<a role="doc-backlink" href="#id8">2</a>,<a role="doc-backlink" href="#id9">3</a>,<a role="doc-backlink" href="#id10">4</a>,<a role="doc-backlink" href="#id11">5</a>,<a role="doc-backlink" href="#id12">6</a>,<a role="doc-backlink" href="#id13">7</a>,<a role="doc-backlink" href="#id14">8</a>,<a role="doc-backlink" href="#id15">9</a>,<a role="doc-backlink" href="#id16">10</a>,<a role="doc-backlink" href="#id17">11</a>,<a role="doc-backlink" href="#id18">12</a>,<a role="doc-backlink" href="#id19">13</a>,<a role="doc-backlink" href="#id20">14</a>,<a role="doc-backlink" href="#id21">15</a>)</span>
+<p>This filtering option is available when using <code class="docutils literal notranslate"><span class="pre">--import</span></code>.</p>
+</aside>
+</aside>
+</section>
+<section id="pm-sampling">
+<h3><span class="section-number">5.4.5. </span>PM Sampling<a class="headerlink" href="#pm-sampling" title="Link to this heading">#</a></h3>
+<p>These options apply to <a class="reference external" href="../ProfilingGuide/index.html#pm-sampling">PM sampling</a>. See <a class="reference external" href="index.html#warp-sampling">here</a> for options used in warp state sampling.</p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id26">
+<caption><span class="caption-text">PM Sampling Command Line Options</span><a class="headerlink" href="#id26" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head" colspan="2"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pm-sampling-interval</p></td>
+<td><p>Set the PM sampling interval in cycles or ns (depending on the architecture), or determine dynamically when 0.</p></td>
+<td colspan="2"><p>0 (auto)</p></td>
+</tr>
+<tr class="row-odd"><td><p>pm-sampling-buffer-size  -</p></td>
+<td><p>Set the size of the device-sided allocation for PM sampling in bytes, or determine dynamically when 0.</p></td>
+<td colspan="2"><p>0 (auto)</p></td>
+</tr>
+<tr class="row-even"><td><p>pm-sampling-max-passes   -</p></td>
+<td><p>Set the maximum number of passes used for PM sampling, or determine dynamically when 0.</p></td>
+<td colspan="2"><p>0 (auto)</p></td>
+</tr>
+<tr class="row-odd"><td><p>warp-samples-per-interval</p></td>
+<td><p>Set the number of warp samples per PM sampling interval, or determine dynamically when 0.</p></td>
+<td colspan="2"><p>0 (auto)</p></td>
+</tr>
+<tr class="row-even"><td><p>disable-pm-warp-sampling</p></td>
+<td><p>Disables warp state sampling during PM sampling.</p></td>
+<td colspan="2"><p>By default, warp state sampling is enabled with the PM sampling.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="warp-sampling">
+<h3><span class="section-number">5.4.6. </span>Warp Sampling<a class="headerlink" href="#warp-sampling" title="Link to this heading">#</a></h3>
+<p>These options apply to <a class="reference external" href="../ProfilingGuide/index.html#statistical-sampler">Warp State Sampling</a>. See <a class="reference external" href="index.html#pm-sampling">here</a> for options used in PM sampling.</p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id27">
+<caption><span class="caption-text">Warp Sampling Command Line Options</span><a class="headerlink" href="#id27" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>warp-sampling-interval</p></td>
+<td><p>Set the sampling period in the range of [0..31]. The actual frequency is 2 ^ (5 + value) cycles. If set to ‘auto’, the profiler tries to automatically determine a high sampling frequency without skipping samples or overflowing the output buffer.</p></td>
+<td><p>auto</p></td>
+</tr>
+<tr class="row-odd"><td><p>warp-sampling-max-passes</p></td>
+<td><p>Set maximum number of passes used for sampling (see the <a class="reference external" href="../ProfilingGuide/index.html#overhead">Profiling Guide</a> for more details on profiling overhead).</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>warp-sampling-buffer-size</p></td>
+<td><p>Set the size of the device-sided allocation for samples in bytes.</p></td>
+<td><p>32*1024*1024</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="file">
+<span id="command-line-options-file"></span><h3><span class="section-number">5.4.7. </span>File<a class="headerlink" href="#file" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id28">
+<caption><span class="caption-text">File Command Line Options</span><a class="headerlink" href="#id28" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>log-file</p></td>
+<td><p>Send all tool output to the specified file, or one of the standard channels. The file will be overwritten. If the file doesn’t exist, a new one will be created.”stdout” as the whole file name indicates standard output channel (stdout). “stderr” as the whole file name indicates standard error channel (stderr).”</p></td>
+<td><p>If <code class="docutils literal notranslate"><span class="pre">--log-file</span></code> is not set , profile results will be printed on the console.</p></td>
+</tr>
+<tr class="row-odd"><td><p>o,export</p></td>
+<td><p>Set the output file for writing the profile report. If not set, a temporary file will be used which is removed afterwards. Use with <code class="docutils literal notranslate"><span class="pre">--import</span></code> option to save filtered results. See <a class="reference external" href="index.html#filtered-profile-export">Filtered Profile Export</a> for more details. The specified name supports macro expansion. See <a class="reference external" href="index.html#command-line-options-file-macros">File Macros</a> for more details.</p></td>
+<td><p>If <code class="docutils literal notranslate"><span class="pre">--export</span></code> is set and no <code class="docutils literal notranslate"><span class="pre">--page</span></code> option is given, no profile results will be printed on the console.</p></td>
+</tr>
+<tr class="row-even"><td><p>f,force-overwrite</p></td>
+<td><p>Force overwriting all output files.</p></td>
+<td><p>By default, the profiler won’t overwrite existing output files and show an error instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p>i,import</p></td>
+<td><p>Set the input file for reading the profile results.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>open-in-ui</p></td>
+<td><p>Open report in UI instead of showing result on terminal. (Only available on host platforms)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>section-folder-restore</p></td>
+<td><p>Restores stock files to the default section folder or the folder specified by an accompanying <em>–section-folder</em> option. If the operation will overwrite modified files then the <em>–force-overwrite</em> option is required.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="console-output">
+<span id="command-line-options-console-output"></span><h3><span class="section-number">5.4.8. </span>Console Output<a class="headerlink" href="#console-output" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id29">
+<caption><span class="caption-text">Console Output Command Line Options</span><a class="headerlink" href="#id29" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>csv</p></td>
+<td><p>Use comma-separated values as console output. Implies –print-units base by default.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>page</p></td>
+<td><p>Select the report page to print console output for. Available pages are:</p>
+<ul class="simple">
+<li><p><strong>details</strong> Show results grouped as sections, include rule results. Some metrics that are collected by default (e.g. device attributes) are omitted if not specified explicitly in any section or using <code class="docutils literal notranslate"><span class="pre">--metrics</span></code>.</p></li>
+<li><p><strong>raw</strong> Show all collected metrics by kernel launch.</p></li>
+<li><p><strong>source</strong> Show source. See <code class="docutils literal notranslate"><span class="pre">--print-source</span></code> to select the source view.</p></li>
+<li><p><strong>session</strong> Show launch settings, session info, process info and device attributes.</p></li>
+</ul>
+</td>
+<td><p><strong>details</strong>. If no <code class="docutils literal notranslate"><span class="pre">--page</span></code> option is given and <code class="docutils literal notranslate"><span class="pre">--export</span></code> is set, no results are printed to the console output.</p></td>
+</tr>
+<tr class="row-even"><td><p>print-source</p></td>
+<td><p>Select the source view:</p>
+<ul class="simple">
+<li><p><strong>sass</strong> Show SASS (assembly) instructions for each kernel launch.</p></li>
+<li><p><strong>ptx</strong> Show PTX source of every cubin whose at least one kernel is profiled.</p></li>
+<li><p><strong>tileir</strong> Show Tile IR source for each kernel launch.</p></li>
+<li><p><strong>cuda</strong> Show entire CUDA source file which has kernel code as per kernel launch. CLI shows CUDA source only if file exists on the host machine.</p></li>
+<li><p><strong>cuda,sass</strong> Show CUDA source to SASS correlation for each kernel launch. CLI shows CUDA source only if source imported in the report or file exists on the host machine.</p></li>
+<li><p><strong>cuda,tileir</strong> Show CUDA source to Tile IR correlation for each kernel launch.</p></li>
+<li><p><strong>tileir,ptx</strong> Show Tile IR to PTX correlation for each kernel launch.</p></li>
+<li><p><strong>tileir,sass</strong> Show Tile IR to SASS correlation for each kernel launch.</p></li>
+</ul>
+<p>Metric correlation with source is available in <strong>sass</strong>, and <strong>cuda,sass</strong> source view. Metrics specified with <code class="docutils literal notranslate"><span class="pre">--metrics</span></code> and specified section file with <code class="docutils literal notranslate"><span class="pre">--section</span></code> are correlated. Consider restricting the number of selected metrics such that values fit into a single output row.</p>
+</td>
+<td><p>sass</p></td>
+</tr>
+<tr class="row-odd"><td><p>resolve-source-file</p></td>
+<td><p>Resolve CUDA source file in the <code class="docutils literal notranslate"><span class="pre">--page</span> <span class="pre">source</span></code> output. Provide comma separated files full path.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>print-details</p></td>
+<td><p>Select which part of a section should be shown in the details page output:</p>
+<ul class="simple">
+<li><p><strong>header</strong> Show all metrics from header of the section.</p></li>
+<li><p><strong>body</strong> Show all metrics from body of the section.</p></li>
+<li><p><strong>all</strong> Show all metrics from the section.</p></li>
+</ul>
+<p>Replaces deprecated option <code class="docutils literal notranslate"><span class="pre">--details-all</span></code>.</p>
+</td>
+<td><p>header</p></td>
+</tr>
+<tr class="row-odd"><td><p>print-metric-name</p></td>
+<td><p>Select one of the option to show it in the Metric Name column:</p>
+<ul class="simple">
+<li><p><strong>label</strong> Show metric label.</p></li>
+<li><p><strong>name</strong> Show metric name.</p></li>
+<li><p><strong>label-name</strong> Show both metric label and metric name.</p></li>
+</ul>
+</td>
+<td><p>label</p></td>
+</tr>
+<tr class="row-even"><td><p>print-units</p></td>
+<td><p>Select the mode for scaling of metric units. Available modes are:</p>
+<ul class="simple">
+<li><p><strong>auto</strong> Show all metrics automatically scaled to the most fitting order of magnitude.</p></li>
+<li><p><strong>base</strong> Show all metrics in their base unit.</p></li>
+</ul>
+</td>
+<td><p>auto</p></td>
+</tr>
+<tr class="row-odd"><td><p>print-metric-attribution</p></td>
+<td><p>Show the attribution level for metrics of Green Context results.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>print-fp</p></td>
+<td><p>Show all numeric metrics in the console output as floating point numbers.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>print-kernel-base</p></td>
+<td><p>Set the basis for kernel name output. See <code class="docutils literal notranslate"><span class="pre">--kernel-regex-base</span></code> for options.</p></td>
+<td><p>demangled</p></td>
+</tr>
+<tr class="row-even"><td><p>print-metric-instances</p></td>
+<td><p>Set output mode for metrics with instance values:</p>
+<ul class="simple">
+<li><p><strong>none</strong> Only show GPU aggregate value.</p></li>
+<li><p><strong>values</strong> Show GPU aggregate followed by all instance values.</p></li>
+<li><p><strong>details</strong> Show aggregate value, followed by correlation IDs and instance values</p></li>
+</ul>
+</td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-odd"><td><p>print-nvtx-rename</p></td>
+<td><p>Select how NVTX should be used for renaming:</p>
+<ul class="simple">
+<li><p><strong>none</strong> Don’t use NVTX for renaming.</p></li>
+<li><p><strong>kernel</strong> Rename kernels with the most recent enclosing NVTX push/pop range.</p></li>
+</ul>
+</td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>print-rule-details</p></td>
+<td><p>Print additional details for rule results, such as tables and metrics that are key performance indicators. Currently has no effect in CSV mode.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>print-summary</p></td>
+<td><p>Select the summary output mode. Available modes are:</p>
+<ul class="simple">
+<li><p><strong>none</strong> No summary.</p></li>
+<li><p><strong>per-gpu</strong> Summary for each GPU.</p></li>
+<li><p><strong>per-kernel</strong> Summary for each kernel type.</p></li>
+<li><p><strong>per-nvtx</strong> Summary for each NVTX context.</p></li>
+</ul>
+</td>
+<td><p>none</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="response-file">
+<h3><span class="section-number">5.4.9. </span>Response File<a class="headerlink" href="#response-file" title="Link to this heading">#</a></h3>
+<p>Response files can be specified by adding <code class="docutils literal notranslate"><span class="pre">&#64;FileName</span></code> to the command line. The file name must immediately follow the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> character. The content of each response file is inserted in place of the corresponding response file option.</p>
+</section>
+<section id="file-macros">
+<span id="command-line-options-file-macros"></span><h3><span class="section-number">5.4.10. </span>File Macros<a class="headerlink" href="#file-macros" title="Link to this heading">#</a></h3>
+<p>The file name specified with option <code class="docutils literal notranslate"><span class="pre">-o</span></code> or <code class="docutils literal notranslate"><span class="pre">--export</span></code> supports the following macro expansions. Occurrences of these macros in the report file name are replaced by the corresponding character sequence. If not specified otherwise, the macros cannot be used as part of the file path.</p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id30">
+<caption><span class="caption-text">Macro Expansions</span><a class="headerlink" href="#id30" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>%h</p></td>
+<td><p>Expands to the host name of the machine on which the command line profiler is running.</p></td>
+</tr>
+<tr class="row-odd"><td><p>%q{ENV_NAME}</p></td>
+<td><p>Expands to the content of the variable with the given name <code class="docutils literal notranslate"><span class="pre">ENV_NAME</span></code> from the environment of the command line profiler.</p></td>
+</tr>
+<tr class="row-even"><td><p>%p</p></td>
+<td><p>Expands to the process ID of the command line profiler.</p></td>
+</tr>
+<tr class="row-odd"><td><p>%i</p></td>
+<td><p>Expands to the lowest unused positive integer number that guarantees the resulting file name is not yet used. This macro can only be used once in the output file name.</p></td>
+</tr>
+<tr class="row-even"><td><p>%%</p></td>
+<td><p>Expands to a single <code class="docutils literal notranslate"><span class="pre">%</span></code> character in the output file name. This macro can be used in the file path and the file name.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mps">
+<span id="command-line-options-mps"></span><h3><span class="section-number">5.4.11. </span>MPS<a class="headerlink" href="#mps" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id31">
+<caption><span class="caption-text">MPS Command Line Options</span><a class="headerlink" href="#id31" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mps</p></td>
+<td><p>Select MPS behavior. Available modes are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>none</strong> No MPS support</p></li>
+<li><p><strong>client</strong> Launch MPS client process</p></li>
+<li><p><strong>primary-client</strong> Launch primary MPS client process</p></li>
+<li><p><strong>control</strong> Launch MPS ncu control</p></li>
+</ul>
+</div></blockquote>
+</td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-odd"><td><p>mps-num-clients</p></td>
+<td><p>Number of MPS client processes.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>mps-timeout</p></td>
+<td><p>Timeout (seconds) to discover MPS client processes.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id32">
+<caption><span class="caption-text">Behavior for Combinations of <code class="docutils literal notranslate"><span class="pre">mps-timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">mps-num-clients</span></code></span><a class="headerlink" href="#id32" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>mps-timeout</p></th>
+<th class="head"><p>mps-num-clients</p></th>
+<th class="head"><p>Behavior</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Specified</p></td>
+<td><p>Not Specified</p></td>
+<td><p>Control Process waits for the specified timeout and if after the timeout no clients are discovered, it exits.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Not Specified</p></td>
+<td><p>Specified</p></td>
+<td><p>Control process waits until the specified number of clients are discovered.</p></td>
+</tr>
+<tr class="row-even"><td><p>Specified</p></td>
+<td><p>Specified</p></td>
+<td><p>Control Process waits up to the specified timeout and if number of clients discovered are not at least the number of clients specified, it exits.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Not Specified</p></td>
+<td><p>Not Specified</p></td>
+<td><p><strong>Error</strong>: At least one of <code class="docutils literal notranslate"><span class="pre">--mps-timeout</span></code> or <code class="docutils literal notranslate"><span class="pre">--mps-num-clients</span></code> must be specified.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="environment-variables">
+<h2><span class="section-number">5.5. </span>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
+<p>The following environment variables can be set before launching NVIDIA Nsight Compute CLI, or the UI, respectively.</p>
+<div class="pst-scrollable-table-container"><table class="table-no-stripes table" id="id33">
+<caption><span class="caption-text">Environment Variables</span><a class="headerlink" href="#id33" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default/Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NV_COMPUTE_PROFILER_DISABLE_STOCK_FILE_DEPLOYMENT</p></td>
+<td><p>Disable file deployment to the versioned <code class="docutils literal notranslate"><span class="pre">Sections</span></code> directory, using section and rule files from the stock directory within the installation instead.</p>
+<p>By default, the versioned directory from the user’s documents folder is used to ensure that any potential user updates are taken into account.</p>
+<p>Only supported in the NVIDIA Nsight Compute CLI.</p>
+</td>
+<td><p>Default: unset</p>
+<p>Set to “1” to disable deployment.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NV_COMPUTE_PROFILER_LOCAL_CONNECTION_OVERRIDE</p></td>
+<td><p>Override the default local connection mechanism between frontend and profiled target processes. The default mechanism is platform-dependent. This should only be used if there are connection problems between frontend and target processes in a local launch.</p></td>
+<td><p>Default: unset (use default mechanism)</p>
+<p>Set to “uds” to use Unix Domain Socket connections (available on Posix platforms, only). Set to “tcp” to use TCP (available on all platforms). Set to “named-pipes” to use Windows Named Pipes (available on Windows, only).</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>NV_COMPUTE_PROFILER_DISABLE_SW_PRE_PASS</p></td>
+<td><p>Disable the instruction-level software (SW) metric pre-pass. When collecting SW-patched metrics, such as <code class="docutils literal notranslate"><span class="pre">inst_executed</span></code>, the pre-pass is used to determine which functions are executed as part of the kernel and should be patched. This requires a separate replay pass, and if only instruction-level SW metrics are to be collected, prevents single-pass data collection. Disabling the pre-pass can improve performance if memory save-and-restore is undesirable and application replay is not possible.</p></td>
+<td><p>Default: unset (use pre-pass when applicable)</p>
+<p>Set to “1” to disable pre-pass.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NV_COMPUTE_PROFILER_DISABLE_CONCURRENT_PROFILING</p></td>
+<td><p>Disable concurrent profiling. If set, only one NCU process will be allowed to profile a kernel in the system at any given time. The default behavior is one NCU process per device or MIG instance.</p></td>
+<td><p>Default: unset</p>
+<p>Set to “1” to disable concurrent profiling.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>NV_COMPUTE_PROFILER_CUDA_LOG_LINES</p></td>
+<td><p>Number of CUDA error log lines to be included in NVLOG output on unrecoverable profiling errors. Logs are reset after each profiling pass.</p></td>
+<td><p>Default: 5</p></td>
+</tr>
+<tr class="row-odd"><td><p>NV_NSIGHT_PYTHON_ISOLATED</p></td>
+<td><p>Controls whether embedded Python processing for rules is isolated from user and site packages and Python environment variables. Isolation is enabled by default to prevent user Python installations from affecting rule loading.
+Set to “0” to disable isolation for rule processing that intentionally depends on the user’s Python environment. Set to “1” to enable isolation. Other values are ignored.</p></td>
+<td><p>Default: unset (isolated)
+Values: “0”, “1”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="nvprof-transition-guide">
+<span id="nvprof-guide"></span><h2><span class="section-number">5.6. </span>Nvprof Transition Guide<a class="headerlink" href="#nvprof-transition-guide" title="Link to this heading">#</a></h2>
+<p>Refer to the <a class="reference external" href="../Archives/index.html">older documentation</a>.</p>
+<p class="rubric-h1 rubric">Notices</p>
+<p class="rubric-h2 rubric">Notices</p>
+<p>ALL NVIDIA DESIGN SPECIFICATIONS, REFERENCE BOARDS, FILES, DRAWINGS, DIAGNOSTICS, LISTS, AND OTHER DOCUMENTS (TOGETHER AND SEPARATELY, “MATERIALS”) ARE BEING PROVIDED “AS IS.” NVIDIA MAKES NO WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR OTHERWISE WITH RESPECT TO THE MATERIALS, AND EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+<p>Information furnished is believed to be accurate and reliable. However, NVIDIA Corporation assumes no responsibility for the consequences of use of such information or for any infringement of patents or other rights of third parties that may result from its use. No license is granted by implication of otherwise under any patent rights of NVIDIA Corporation. Specifications mentioned in this publication are subject to change without notice. This publication supersedes and replaces all other information previously supplied. NVIDIA Corporation products are not authorized as critical components in life support devices or systems without express written approval of NVIDIA Corporation.</p>
+<p class="rubric-h2 rubric">Trademarks</p>
+<p>NVIDIA and the NVIDIA logo are trademarks or registered trademarks of NVIDIA Corporation in the U.S. and other countries. Other company and product names may be trademarks of the respective companies with which they are associated.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../NsightCompute/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Nsight Compute</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../CustomizationGuide/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Customization Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+
+
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">5.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart">5.2. Quickstart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">5.3. Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modes">5.3.1. Modes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-process-support">5.3.2. Multi-Process Support</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-support">Platform Support</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mpi-support">MPI Support</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mandatory-concurrent-kernels">Mandatory Concurrent Kernels</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-pages">5.3.3. Output Pages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-import">5.3.4. Profile Import</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtered-profile-export">5.3.5. Filtered Profile Export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-and-units">5.3.6. Metrics and Units</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvtx-filtering">5.3.7. NVTX Filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-file">5.3.8. Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-renaming">5.3.9. Kernel Renaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-call-stack-filtering">5.3.10. CPU Call Stack Filtering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-options">5.4. Command Line Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general">5.4.1. General</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch">5.4.2. Launch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attach">5.4.3. Attach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile">5.4.4. Profile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pm-sampling">5.4.5. PM Sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-sampling">5.4.6. Warp Sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file">5.4.7. File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#console-output">5.4.8. Console Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#response-file">5.4.9. Response File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-macros">5.4.10. File Macros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mps">5.4.11. MPS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">5.5. Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvprof-transition-guide">5.6. Nvprof Transition Guide</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+<a class="footer-brand logo" href="https://www.nvidia.com">
+  <img src="../_static/nvidia-logo-horiz-rgb-1c-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA"/>
+  <img src="../_static/nvidia-logo-horiz-rgb-1c-wht-for-screen.svg" class="logo__image only-dark" alt="NVIDIA"/>
+</a></div>
+      
+        <div class="footer-item">
+
+<div class="footer-links">
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/">Privacy Policy</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-center/">Manage My Privacy</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/preferences/start/">Do Not Sell or Share My Data</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/terms-of-service/">Terms of Service</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/company-policies/">Corporate Policies</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/contact/">Contact</a>
+  
+  
+  
+</div>
+</div>
+      
+        <div class="footer-item">
+
+
+
+
+  <p class="copyright">
+    
+      Copyright © 2018-2026, NVIDIA Corporation &amp; Affiliates. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Aug 27, 2026.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

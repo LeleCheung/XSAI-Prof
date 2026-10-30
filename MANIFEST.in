@@ -1,0 +1,9 @@
+include vendor/xsai-blas-profiling/roi_hotspots.py
+include vendor/xsai-blas-profiling/LICENSE
+include vendor/xsai-rtl-reference/LICENSE
+include vendor/xsai-rtl-reference/NOTICE
+include CHANGELOG.md
+recursive-include docs profiler-quickstart.md profiler-supported-targets.md profiler-ame-read.md profiler-case-studies.md
+include docs/profiler-cli-workflow.md
+recursive-include tools build_release.py
+recursive-include tests *.py *.S
